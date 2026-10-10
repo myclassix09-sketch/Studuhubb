@@ -4,1156 +4,928 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Studyhub: Class 10 Mathematics and Science notes, formulas, examples, revision questions and quizzes.">
-<title>Studyhub | Class 10 Learning</title>
+<meta name="description" content="Studyhub: free Class 10 Maths and Science notes, formulas, examples, revision questions, quizzes and career guidance.">
+<meta name="theme-color" content="#176b55">
+<title>Studyhub | Learn, Practise, Grow</title>
 
 <style>
-:root {
+:root{
   --green:#176b55;
-  --dark:#103f32;
-  --light:#eaf5ef;
-  --gold:#f0b84b;
-  --text:#1d2b26;
-  --muted:#65756e;
-  --white:#ffffff;
-  --border:#dce7e0;
-  --bg:#f6f9f7;
-  --red:#b42318;
-  --blue:#2459a9;
-  --shadow:0 8px 25px rgba(20,60,43,.08);
+  --dark:#103d32;
+  --mint:#e8f5ef;
+  --lime:#d8f3a7;
+  --ink:#172b25;
+  --muted:#62736c;
+  --paper:#f6f9f6;
+  --white:#fff;
+  --line:#dfe9e2;
+  --orange:#fff0d9;
+  --blue:#eaf2ff;
+  --shadow:0 8px 28px rgba(16,61,50,.07);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.7
 }
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
+button,input,select,textarea{font:inherit}
+button,a{transition:.2s}
 a{color:var(--green)}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid #e0aa44;outline-offset:3px
+}
 header{
-  background:var(--white);
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:20;
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(12px)
 }
-.nav-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:12px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  flex-wrap:wrap;
+.nav{
+  max-width:1200px;margin:auto;padding:12px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--dark);
-  font-size:23px;
-  font-weight:800;
-  text-decoration:none;
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark)}
+.brand-icon{
+  display:grid;place-items:center;background:var(--green);color:white;
+  width:43px;height:43px;border-radius:14px;font-size:23px;font-weight:bold
 }
-.logo{
-  display:grid;
-  place-items:center;
-  background:var(--green);
-  color:white;
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  font-size:21px;
+.brand strong{font-size:21px;display:block;line-height:1.2}
+.brand small{color:var(--muted);font-size:11px}
+.navlinks{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks button{
+  background:transparent;border:0;color:#43564d;padding:9px 11px;
+  border-radius:10px;font-size:13px;font-weight:700
 }
-nav{display:flex;gap:7px;flex-wrap:wrap}
-nav button{
-  border:0;
-  background:transparent;
-  color:var(--text);
-  padding:10px 13px;
-  border-radius:9px;
-  font-weight:700;
-}
-nav button:hover,nav button.active{background:var(--light);color:var(--green)}
-main{max-width:1200px;margin:auto;padding:25px 20px 55px}
-.page{display:none}
+.navlinks button:hover,.navlinks button.active{background:var(--mint);color:var(--green)}
+.menu-toggle{display:none}
+main{max-width:1200px;margin:auto;padding:28px 22px 65px}
+.page{display:none;animation:fade .3s ease}
 .page.active{display:block}
+@keyframes fade{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}
 .hero{
-  background:linear-gradient(120deg,#103f32,#197a5e);
-  color:white;
-  padding:48px 35px;
-  border-radius:23px;
-  display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:30px;
-  align-items:center;
-  overflow:hidden;
+  background:linear-gradient(125deg,#103d32,#176b55 65%,#33876a);
+  color:white;border-radius:27px;padding:clamp(28px,5vw,64px);
+  position:relative;overflow:hidden;box-shadow:var(--shadow)
 }
-.hero h1{font-size:clamp(32px,4vw,50px);line-height:1.13;margin:12px 0}
-.hero p{font-size:17px;color:#e0f1e8;max-width:650px}
-.eyebrow{
-  display:inline-block;
-  padding:6px 11px;
-  border-radius:30px;
-  background:#ffffff20;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.4px;
+.hero:after{
+  content:"✦";position:absolute;right:7%;top:8%;
+  font-size:170px;color:rgba(255,255,255,.07);pointer-events:none
 }
-.hero-art{
-  min-height:200px;
-  display:grid;
-  place-items:center;
-  font-size:100px;
-  background:#ffffff12;
-  border:1px solid #ffffff25;
-  border-radius:20px;
+.hero-tag{
+  display:inline-block;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.2);border-radius:30px;
+  padding:5px 12px;font-size:12px;font-weight:bold;letter-spacing:.6px
 }
+.hero h1{font-size:clamp(34px,5.5vw,60px);line-height:1.1;max-width:720px;margin:22px 0 15px}
+.hero p{max-width:660px;color:#e0eee7;font-size:17px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .btn{
-  border:0;
-  border-radius:10px;
-  padding:11px 17px;
-  background:var(--green);
-  color:white;
-  font-weight:700;
-  display:inline-block;
-  text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border:0;border-radius:12px;padding:12px 18px;
+  background:var(--green);color:white;text-decoration:none;font-weight:750
 }
-.btn:hover{filter:brightness(.93)}
-.btn.gold{background:var(--gold);color:#33260b}
-.btn.light{background:var(--light);color:var(--green)}
-.btn.outline{background:white;color:var(--green);border:1px solid var(--border)}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.hero .btn{margin:7px 7px 0 0}
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:15px;
-  flex-wrap:wrap;
-  margin:32px 0 17px;
-}
-h2{color:var(--dark);font-size:27px;line-height:1.25;margin:0 0 8px}
-h3{color:var(--dark);margin:0 0 8px}
-.muted{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-light{background:white;color:var(--dark)}
+.btn-outline{background:transparent;border:1px solid var(--line);color:var(--dark)}
+.btn-soft{background:var(--mint);color:var(--green)}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 34px}
+.stat{padding:19px;background:white;border:1px solid var(--line);border-radius:17px}
+.stat strong{font-size:25px;color:var(--green);display:block}
+.stat span{font-size:13px;color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:35px 0 17px}
+.section-head h2{margin:0;font-size:clamp(23px,3vw,31px);line-height:1.25}
+.section-head p{margin:6px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:22px;
-  box-shadow:var(--shadow);
-  min-width:0;
+  background:white;border:1px solid var(--line);border-radius:19px;
+  padding:23px;box-shadow:var(--shadow);min-width:0
 }
-.card p:last-child{margin-bottom:0}
-.subject-card{position:relative;overflow:hidden}
-.subject-icon{font-size:35px;margin-bottom:7px}
-.tag{
-  display:inline-block;
-  border-radius:20px;
-  background:var(--light);
-  color:var(--green);
-  font-size:12px;
-  font-weight:700;
-  padding:4px 9px;
-  margin:3px 3px 3px 0;
+.card h3{margin:6px 0 9px;font-size:20px;line-height:1.35}
+.card p{color:var(--muted);margin:8px 0}
+.card-icon{
+  width:46px;height:46px;border-radius:14px;background:var(--mint);
+  display:grid;place-items:center;font-size:24px
 }
-.search-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.search-row input,.field{
-  width:100%;
-  border:1px solid #cbd9d0;
-  border-radius:10px;
-  padding:12px 13px;
-  background:white;
-  color:var(--text);
+.card-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.eyebrow{text-transform:uppercase;letter-spacing:1px;font-size:11px;font-weight:800;color:var(--green)}
+.quote-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:21px;border-left:4px solid var(--green)
 }
-.search-row input{flex:1;min-width:220px}
-.chapter-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.chapter-item{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
+.quote-card blockquote{margin:0;font-size:17px;font-weight:700;line-height:1.5}
+.quote-card p{margin:10px 0 0;color:var(--muted);font-size:12px}
+.quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.notice{padding:15px 17px;background:var(--blue);border-radius:13px;margin:15px 0;color:#24486f}
+.notice.orange{background:var(--orange);color:#714a13}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.field{
+  width:100%;min-width:0;padding:12px 13px;border:1px solid #ccd9d0;
+  border-radius:11px;background:white;color:var(--ink)
 }
-.chapter-item strong{display:block}
-.chapter-item small{color:var(--muted)}
-.chapter-item button{flex-shrink:0}
-.progress-track{height:9px;background:#e4ece7;border-radius:10px;overflow:hidden}
-.progress-fill{height:100%;width:0;background:#1b8b62;transition:width .25s}
-.lesson-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:start}
-.lesson-sidebar{position:sticky;top:92px}
-.lesson-content{min-width:0}
-.lesson-content .card{margin-bottom:16px;box-shadow:none}
-.lesson-content ul,.lesson-content ol{padding-left:23px}
+.toolbar .field{flex:1;min-width:200px}
+select.field{cursor:pointer}
+.chapter-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.chapter-button{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  text-align:left;gap:12px;background:white;border:1px solid var(--line);
+  border-radius:13px;padding:14px 15px;color:var(--ink)
+}
+.chapter-button:hover{border-color:var(--green);background:#f1faf5}
+.chapter-button strong{display:block;line-height:1.4}
+.chapter-button small{display:block;color:var(--muted);margin-top:4px}
+.checkmark{color:var(--green);font-size:19px}
+.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:20px;align-items:start}
+.lesson-main{min-width:0}
+.lesson-sidebar{position:sticky;top:100px}
+.lesson-title{background:var(--mint);padding:27px;border-radius:20px;margin-bottom:18px}
+.lesson-title h1{font-size:clamp(25px,4vw,38px);line-height:1.2;margin:8px 0}
+.lesson-title p{margin:0;color:#446459}
+.lesson-block{margin-bottom:17px}
+.lesson-block h2{font-size:21px;margin:0 0 10px}
+.lesson-block ul,.lesson-block ol{padding-left:23px}
+.lesson-block li{margin:6px 0}
 .formula{
-  background:#f0f7f2;
-  border-left:4px solid var(--green);
-  border-radius:7px;
-  padding:12px 15px;
-  margin:9px 0;
-  overflow-wrap:anywhere;
+  background:#f1f7f2;border:1px solid #d8e9db;padding:13px 16px;
+  border-radius:12px;font-family:Cambria,Georgia,serif;font-size:17px;
+  overflow-wrap:anywhere;margin:8px 0
 }
 .example{
-  background:#fff9e9;
-  border-left:4px solid var(--gold);
-  padding:13px 15px;
-  border-radius:7px;
-  margin:10px 0;
+  border:1px solid var(--line);border-radius:13px;padding:16px;margin:10px 0;background:white
 }
-.revision-list li{margin-bottom:10px}
-.quiz-question{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:20px;
-  margin:15px 0;
-}
-.quiz-question legend{font-weight:700;margin-bottom:10px}
+.example .answer{color:var(--green);font-weight:750}
+.revision-q{border-top:1px solid var(--line);padding:12px 0}
+.revision-q summary{cursor:pointer;font-weight:700}
+.revision-q p{color:var(--muted)}
+.progress-track{height:8px;background:#e6eee8;border-radius:99px;overflow:hidden;margin:9px 0}
+.progress-track span{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.quiz-question{padding:20px;background:white;border:1px solid var(--line);border-radius:16px;margin:13px 0}
+.quiz-question h3{margin:0 0 13px;font-size:17px}
 .quiz-option{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  padding:10px;
-  border-radius:8px;
-  cursor:pointer;
+  display:flex;align-items:flex-start;gap:10px;padding:10px 12px;
+  border:1px solid #e1e9e2;border-radius:10px;margin:7px 0;cursor:pointer
 }
-.quiz-option:hover{background:#f2f7f3}
+.quiz-option:hover{background:#f5faf6}
 .quiz-option input{margin-top:6px;accent-color:var(--green)}
-.quiz-feedback{
-  margin-top:12px;
-  padding:12px;
-  border-radius:8px;
-  background:#f1f5f3;
-}
-.quiz-feedback.correct{background:#e7f6eb;color:#14532d}
-.quiz-feedback.incorrect{background:#fff0ee;color:#8c241a}
-.quiz-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.score-panel{
-  background:var(--light);
-  border:1px solid #c7e4d2;
-  padding:20px;
-  border-radius:14px;
-  margin:18px 0;
-}
+.quiz-option.correct{background:#e5f6e9;border-color:#70b582}
+.quiz-option.incorrect{background:#fff0ee;border-color:#df8e82}
+.explanation{margin-top:12px;padding:12px;background:#f2f7f2;border-radius:10px;font-size:14px}
+#quizResult{padding:20px;border-radius:16px;background:var(--mint);margin:17px 0}
 .hidden{display:none!important}
-.resource-link{
-  display:block;
-  text-decoration:none;
-  background:white;
-  border:1px solid var(--border);
-  padding:17px;
-  border-radius:12px;
-  color:var(--text);
-  margin-bottom:10px;
+.planner-row{display:flex;gap:10px;align-items:center;margin:9px 0}
+.planner-row input[type=checkbox]{accent-color:var(--green);width:18px;height:18px}
+.planner-row span{flex:1}
+footer{background:var(--dark);color:white;padding:30px 22px}
+.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{color:#c7ddd2;font-size:13px;margin:5px 0}
+.small{font-size:13px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+.career-step{display:flex;gap:13px;margin:14px 0}
+.career-number{flex:0 0 35px;height:35px;border-radius:11px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-weight:bold}
+#toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:var(--dark);color:white;padding:11px 18px;border-radius:12px;
+  z-index:300;box-shadow:var(--shadow);max-width:90vw
 }
-.resource-link:hover{border-color:var(--green)}
-.resource-link strong{display:block;color:var(--green)}
-textarea.field{min-height:110px;resize:vertical}
-footer{
-  background:#103f32;
-  color:#e3f0e9;
-  padding:25px 20px;
-  text-align:center;
-}
-footer p{margin:5px}
-.note{font-size:13px;color:var(--muted)}
-.status{font-weight:700;color:var(--green)}
-@media(max-width:800px){
-  .hero{grid-template-columns:1fr;padding:30px 23px}
-  .hero-art{min-height:110px;font-size:65px}
+@media(max-width:900px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .lesson-layout{grid-template-columns:1fr}
   .lesson-sidebar{position:static}
 }
-@media(max-width:560px){
-  main{padding:17px 12px 35px}
-  .nav-wrap{padding:10px 12px}
-  nav{width:100%;gap:3px}
-  nav button{padding:8px;font-size:13px}
-  .brand{font-size:20px}
-  .grid,.grid.two,.chapter-list{grid-template-columns:1fr}
-  .card{padding:17px}
-  .hero h1{font-size:34px}
-  .chapter-item{align-items:flex-start}
+@media(max-width:680px){
+  .nav{padding:10px 14px;flex-wrap:wrap}
+  .menu-toggle{display:block;border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px}
+  .navlinks{display:none;width:100%;justify-content:flex-start}
+  .navlinks.open{display:flex}
+  .navlinks button{font-size:12px;padding:8px}
+  main{padding:19px 14px 45px}
+  .hero{padding:28px 22px;border-radius:20px}
+  .hero h1{font-size:37px}
+  .stats{gap:8px}
+  .stat{padding:13px}
+  .stat strong{font-size:21px}
+  .grid,.grid.two,.quote-grid,.chapter-list{grid-template-columns:1fr}
+  .card{padding:19px}
+  .section-head{align-items:start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 }
 </style>
 </head>
 
 <body>
 <header>
-  <div class="nav-wrap">
-    <a class="brand" href="#" data-page="home">
-      <span class="logo">S</span> Studyhub
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#" onclick="showPage('home');return false">
+      <span class="brand-icon">S</span>
+      <span><strong>Studyhub</strong><small>Learn • Practise • Grow</small></span>
     </a>
-    <nav aria-label="Main navigation">
-      <button class="active" data-page="home">Home</button>
-      <button data-page="subjects">Subjects</button>
-      <button data-page="practice">Quiz Practice</button>
-      <button data-page="resources">CBSE Resources</button>
-      <button data-page="planner">Study Planner</button>
-    </nav>
-  </div>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-expanded="false">☰ Menu</button>
+    <div class="navlinks" id="navlinks">
+      <button class="active" data-page="home" onclick="showPage('home')">Home</button>
+      <button data-page="learn" onclick="showPage('learn')">Learning</button>
+      <button data-page="practice" onclick="showPage('practice')">Quiz</button>
+      <button data-page="resources" onclick="showPage('resources')">Resources</button>
+      <button data-page="planner" onclick="showPage('planner')">Study Plan</button>
+      <button data-page="career" onclick="showPage('career')">Career & Counselling</button>
+    </div>
+  </nav>
 </header>
 
 <main>
-  <section id="home" class="page active">
-    <div class="hero">
-      <div>
-        <span class="eyebrow">CLASS 10 • LEARN AT YOUR PACE</span>
-        <h1>Understand more.<br>Practise smarter.</h1>
-        <p>Your learning space for Class 10 Mathematics and Science: chapter notes, formulas, worked examples, revision questions and quizzes.</p>
-        <button class="btn gold" data-page="subjects">Explore Chapters</button>
-        <button class="btn light" data-page="practice">Start a Quiz</button>
-      </div>
-      <div class="hero-art" aria-hidden="true">📚 🧪</div>
+<!-- HOME -->
+<section class="page active" id="home">
+  <div class="hero">
+    <span class="hero-tag">YOUR CLASS 10 LEARNING SPACE</span>
+    <h1>Understand more.<br>Memorise less.</h1>
+    <p>Build strong concepts in Mathematics and Science with chapter-wise notes, important formulas, solved examples, revision questions and fresh quizzes.</p>
+    <div class="hero-actions">
+      <button class="btn btn-light" onclick="showPage('learn')">Start Learning →</button>
+      <button class="btn" style="background:#d8f3a7;color:#103d32" onclick="showPage('practice')">Practise a Quiz</button>
     </div>
+  </div>
 
-    <div class="section-head">
-      <div>
-        <h2>Your learning dashboard</h2>
-        <p class="muted">Continue learning and track your completed chapters.</p>
-      </div>
-    </div>
+  <div class="stats">
+    <div class="stat"><strong>2</strong><span>Core subjects</span></div>
+    <div class="stat"><strong>28</strong><span>Chapters to explore</span></div>
+    <div class="stat"><strong id="homeProgress">0%</strong><span>Your learning progress</span></div>
+  </div>
 
-    <div class="grid">
-      <div class="card">
-        <div class="subject-icon">📐</div>
-        <h3>Mathematics</h3>
-        <p class="muted">Concepts, formulas, examples and practice.</p>
-        <button class="btn" data-subject="Maths">Explore Maths</button>
-      </div>
-      <div class="card">
-        <div class="subject-icon">🔬</div>
-        <h3>Science</h3>
-        <p class="muted">Physics, Chemistry and Biology revision.</p>
-        <button class="btn" data-subject="Science">Explore Science</button>
-      </div>
-      <div class="card">
-        <div class="subject-icon">🧠</div>
-        <h3>Quiz Practice</h3>
-        <p class="muted">Get a fresh selection of questions each time.</p>
-        <button class="btn" data-page="practice">Practise now</button>
-      </div>
-    </div>
+  <div class="section-head">
+    <div><h2>Choose your subject</h2><p>Learn one concept at a time.</p></div>
+  </div>
+  <div class="grid two">
+    <article class="card">
+      <div class="card-icon">📐</div><span class="eyebrow">Problem solving</span>
+      <h3>Mathematics</h3>
+      <p>Explore algebra, geometry, trigonometry, statistics and probability. Learn formulas with worked examples.</p>
+      <button class="btn" onclick="openSubject('Maths')">Explore Maths →</button>
+    </article>
+    <article class="card">
+      <div class="card-icon">🔬</div><span class="eyebrow">Understand the world</span>
+      <h3>Science</h3>
+      <p>Study chemical reactions, life processes, electricity, optics, environment and more.</p>
+      <button class="btn" onclick="openSubject('Science')">Explore Science →</button>
+    </article>
+  </div>
 
-    <div class="section-head">
-      <div>
-        <h2>Chapter progress</h2>
-        <p class="muted"><span id="progress-count">0 of 28</span> chapters completed</p>
+  <div class="section-head"><div><h2>Words worth remembering</h2><p>Small reminders for your everyday learning journey.</p></div></div>
+  <div class="quote-grid">
+    <article class="quote-card"><blockquote>“The beautiful thing about learning is that nobody can take it away from you.”</blockquote><p>— Commonly attributed to B.B. King</p></article>
+    <article class="quote-card"><blockquote>“It always seems impossible until it's done.”</blockquote><p>— Nelson Mandela</p></article>
+    <article class="quote-card"><blockquote>“Great things are done by a series of small things brought together.”</blockquote><p>— Vincent van Gogh</p></article>
+    <article class="quote-card"><blockquote>“Success is the sum of small efforts, repeated day in and day out.”</blockquote><p>— Robert Collier</p></article>
+    <article class="quote-card"><blockquote>“The secret of getting ahead is getting started.”</blockquote><p>— Commonly attributed to Mark Twain</p></article>
+    <article class="quote-card"><blockquote>“Learning never exhausts the mind.”</blockquote><p>— Leonardo da Vinci</p></article>
+    <article class="quote-card"><blockquote>“Well done is better than well said.”</blockquote><p>— Benjamin Franklin</p></article>
+    <article class="quote-card"><blockquote>“It is not that I'm so smart, but I stay with problems longer.”</blockquote><p>— Albert Einstein</p></article>
+    <article class="quote-card"><blockquote>Your future is shaped by what you practise today.</blockquote><p>— Studyhub reminder</p></article>
+  </div>
+
+  <div class="section-head"><div><h2>Your next step</h2><p>Make learning active instead of just reading.</p></div></div>
+  <div class="grid">
+    <article class="card"><div class="card-icon">📝</div><h3>Test your knowledge</h3><p>Answer a new set of questions and read the explanations.</p><button class="btn btn-soft" onclick="showPage('practice')">Open Quiz</button></article>
+    <article class="card"><div class="card-icon">📅</div><h3>Build a routine</h3><p>Set a daily target and check off tasks as you finish them.</p><button class="btn btn-soft" onclick="showPage('planner')">Open Study Plan</button></article>
+    <article class="card"><div class="card-icon">🧭</div><h3>Explore careers</h3><p>Discover fields, skills and questions to discuss with a trusted adult.</p><button class="btn btn-soft" onclick="showPage('career')">Explore Careers</button></article>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section class="page" id="learn">
+  <div class="section-head">
+    <div><span class="eyebrow">Your digital textbook companion</span><h2>Chapter-wise Learning</h2><p>Choose a chapter for notes, formulas, worked examples and revision questions.</p></div>
+  </div>
+  <div class="toolbar">
+    <input class="field" id="chapterSearch" placeholder="Search a chapter or topic..." oninput="renderChapters()" aria-label="Search chapters">
+    <select class="field" id="subjectFilter" onchange="renderChapters()" aria-label="Filter subject">
+      <option value="All">All subjects</option><option value="Maths">Mathematics</option><option value="Science">Science</option>
+    </select>
+  </div>
+  <div id="chapterResults" class="chapter-list"></div>
+  <p class="small">These are learning notes and practice aids. Follow your current NCERT textbook and teacher's syllabus for the exact board-exam requirements.</p>
+</section>
+
+<!-- LESSON -->
+<section class="page" id="lesson">
+  <div class="toolbar">
+    <button class="btn btn-outline" onclick="showPage('learn')">← All chapters</button>
+    <button class="btn btn-soft" id="markCompleteTop" onclick="markCurrentDone()">✓ Mark as completed</button>
+  </div>
+  <div class="lesson-layout">
+    <div class="lesson-main" id="lessonContent"></div>
+    <aside class="lesson-sidebar">
+      <div class="card">
+        <span class="eyebrow">Your progress</span><h3>Chapter checklist</h3>
+        <p class="small" id="lessonProgressText">Keep going!</p>
+        <div class="progress-track"><span id="lessonProgressBar"></span></div>
+        <hr>
+        <button class="btn btn-soft" style="width:100%" onclick="showPage('practice')">Practise a Quiz →</button>
+        <button class="btn btn-outline" style="width:100%;margin-top:8px" onclick="showPage('planner')">Open Study Plan</button>
       </div>
+    </aside>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="page" id="practice">
+  <div class="section-head">
+    <div><span class="eyebrow">Learn from every answer</span><h2>Fresh Practice Quiz</h2><p>Each attempt generates a new set. Maths questions use changing values, and Science questions are drawn from a question bank.</p></div>
+  </div>
+  <div class="grid two">
+    <div class="card">
+      <label for="quizSubject"><strong>Choose a subject</strong></label>
+      <select class="field" id="quizSubject" onchange="startQuiz()" style="margin-top:8px">
+        <option value="All">Mixed Maths + Science</option>
+        <option value="Maths">Mathematics only</option>
+        <option value="Science">Science only</option>
+      </select>
+      <p class="small">Every fresh attempt selects different questions where possible. Generated Maths questions can vary indefinitely within their templates.</p>
     </div>
     <div class="card">
-      <div class="progress-track"><div class="progress-fill" id="home-progress"></div></div>
-      <p class="note">Progress is saved in this browser on this device.</p>
-      <button class="btn light" data-page="subjects">View all chapters</button>
+      <div class="eyebrow">Quiz rules</div>
+      <h3>Answer, check, improve</h3>
+      <p>Choose one answer per question. After submitting, your score, correct answers and explanations appear. A new quiz begins automatically after 10 seconds, or start one immediately.</p>
     </div>
-  </section>
+  </div>
+  <div class="notice">Tip: Try answering from memory first. Then read the explanation even when you get an answer right.</div>
+  <div id="quizStatus" class="small" aria-live="polite"></div>
+  <form id="quizForm"></form>
+  <div id="quizResult" class="hidden" aria-live="polite"></div>
+</section>
 
-  <section id="subjects" class="page">
-    <div class="section-head">
-      <div>
-        <h2>Class 10 subjects and chapters</h2>
-        <p class="muted">Choose a chapter to open its notes, formulas, examples and revision questions.</p>
-      </div>
-    </div>
+<!-- RESOURCES -->
+<section class="page" id="resources">
+  <div class="section-head"><div><span class="eyebrow">Trusted study links</span><h2>Resources & Revision</h2><p>Use official sources for current textbooks, sample papers and curriculum information.</p></div></div>
+  <div class="grid">
+    <article class="card"><div class="card-icon">📚</div><h3>NCERT Textbooks</h3><p>Read the prescribed textbook and practise examples and exercises.</p><a class="btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer">Open NCERT ↗</a></article>
+    <article class="card"><div class="card-icon">📄</div><h3>CBSE Sample Papers</h3><p>Check the official sample papers and marking schemes for the relevant session.</p><a class="btn" href="https://cbseacademic.nic.in/" target="_blank" rel="noopener noreferrer">CBSE Academic ↗</a></article>
+    <article class="card"><div class="card-icon">🗂️</div><h3>CBSE Question Papers</h3><p>Use available previous papers to practise exam-style questions.</p><a class="btn" href="https://www.cbse.gov.in/" target="_blank" rel="noopener noreferrer">CBSE Website ↗</a></article>
+  </div>
+  <div class="section-head"><div><h2>How to revise a chapter</h2><p>A repeatable routine for Maths and Science.</p></div></div>
+  <div class="grid two">
+    <article class="card"><h3>📖 First: Understand</h3><ul><li>Read the NCERT chapter carefully.</li><li>Write key ideas in your own words.</li><li>Mark anything you cannot explain yet.</li></ul></article>
+    <article class="card"><h3>✍️ Second: Practise</h3><ul><li>Recall formulas without looking.</li><li>Solve examples independently.</li><li>Attempt the revision questions.</li></ul></article>
+    <article class="card"><h3>🧠 Third: Recall</h3><ul><li>Close the book and explain the concept.</li><li>Make a short list of mistakes.</li><li>Return to difficult questions later.</li></ul></article>
+    <article class="card"><h3>🔁 Fourth: Repeat</h3><ul><li>Revise after one day.</li><li>Revisit difficult topics after several days.</li><li>Mix older chapters into practice sessions.</li></ul></article>
+  </div>
+  <div class="notice orange"><strong>Important:</strong> Sample papers, chapter lists and exam rules can change between sessions. Always check the official CBSE/NCERT material for your examination year.</div>
+</section>
 
-    <div class="search-row">
-      <input id="chapter-search" type="search" placeholder="Search chapters, e.g. electricity or trigonometry..." aria-label="Search chapters">
-    </div>
-
-    <div class="grid two">
-      <div class="card subject-card">
-        <div class="subject-icon">📐</div>
-        <h3>Mathematics</h3>
-        <p class="muted">Algebra, geometry, trigonometry, statistics and probability.</p>
-        <span class="tag">NCERT-aligned topics</span>
-        <button class="btn" data-subject="Maths">Show Maths chapters</button>
-      </div>
-      <div class="card subject-card">
-        <div class="subject-icon">🔬</div>
-        <h3>Science</h3>
-        <p class="muted">Chemistry, Biology, Physics and environment.</p>
-        <span class="tag">NCERT-aligned topics</span>
-        <button class="btn" data-subject="Science">Show Science chapters</button>
-      </div>
-    </div>
-
-    <div id="chapter-results" style="margin-top:28px"></div>
-  </section>
-
-  <section id="lesson" class="page">
-    <button class="btn light" data-page="subjects">← Back to chapters</button>
-    <div class="section-head">
-      <div>
-        <span id="lesson-subject" class="tag">Class 10</span>
-        <h2 id="lesson-title">Chapter title</h2>
-        <p class="muted">Starter revision material. Check your current NCERT textbook and teacher's syllabus for complete coverage.</p>
-      </div>
-    </div>
-    <div class="lesson-layout">
-      <aside class="card lesson-sidebar">
-        <h3>In this lesson</h3>
-        <p><a href="#lesson-notes">Key notes</a></p>
-        <p><a href="#lesson-formulas">Formulas / key facts</a></p>
-        <p><a href="#lesson-example">Worked example</a></p>
-        <p><a href="#lesson-revision">Revision questions</a></p>
-        <div class="progress-track"><div class="progress-fill" id="lesson-progress"></div></div>
-        <p id="lesson-done-label" class="note">Not marked complete</p>
-        <button id="mark-done" class="btn">Mark as completed</button>
-      </aside>
-      <div class="lesson-content">
-        <div id="lesson-notes" class="card">
-          <h3>Key notes</h3>
-          <div id="notes-content"></div>
-        </div>
-        <div id="lesson-formulas" class="card">
-          <h3>Formulas and key facts</h3>
-          <div id="formulas-content"></div>
-        </div>
-        <div id="lesson-example" class="card">
-          <h3>Worked example</h3>
-          <div id="example-content"></div>
-        </div>
-        <div id="lesson-revision" class="card">
-          <h3>Revision questions</h3>
-          <ol id="revision-content" class="revision-list"></ol>
-          <button class="btn light" data-page="practice">Practise with a quiz</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="practice" class="page">
-    <div class="section-head">
-      <div>
-        <h2>Quiz Practice</h2>
-        <p class="muted">Six questions per attempt. The question set is selected randomly from a larger Maths and Science bank.</p>
-      </div>
-      <span class="tag">Class 10</span>
+<!-- PLANNER -->
+<section class="page" id="planner">
+  <div class="section-head"><div><span class="eyebrow">Small steps add up</span><h2>My Study Plan</h2><p>Make a simple daily plan and track your progress on this device.</p></div></div>
+  <div class="grid two">
+    <div class="card">
+      <h3>Today's target</h3>
+      <label for="goalInput">What will you study?</label>
+      <input class="field" id="goalInput" placeholder="e.g. Revise quadratic equations" style="margin-top:8px">
+      <button class="btn" onclick="addGoal()" style="margin-top:10px">+ Add task</button>
+      <div id="goalList" style="margin-top:16px"></div>
+      <button class="btn btn-outline" onclick="clearGoals()" style="margin-top:12px">Clear tasks</button>
     </div>
     <div class="card">
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-        <label for="quiz-subject"><strong>Choose subject:</strong></label>
-        <select id="quiz-subject" class="field" style="width:auto;min-width:170px">
-          <option value="All">Maths + Science</option>
-          <option value="Maths">Mathematics</option>
-          <option value="Science">Science</option>
-        </select>
-        <button class="btn light" id="new-quiz-top" type="button">New Quiz</button>
-      </div>
-      <p class="note">Submit your answers to see your score and an explanation for each question. A fresh quiz starts automatically after 8 seconds, or you can start one immediately.</p>
+      <h3>Study session guide</h3>
+      <p>Use a realistic routine that leaves time for rest and other responsibilities.</p>
+      <div class="career-step"><div class="career-number">1</div><div><strong>Review — 10 minutes</strong><p class="small">Recall yesterday's concepts.</p></div></div>
+      <div class="career-step"><div class="career-number">2</div><div><strong>Learn — 25 minutes</strong><p class="small">Study one topic and make notes.</p></div></div>
+      <div class="career-step"><div class="career-number">3</div><div><strong>Practise — 20 minutes</strong><p class="small">Solve questions without looking at solutions.</p></div></div>
+      <div class="career-step"><div class="career-number">4</div><div><strong>Reflect — 5 minutes</strong><p class="small">Write down what you understood and what needs more work.</p></div></div>
+      <p class="small">Adjust the timing to suit your school timetable and energy level.</p>
     </div>
+  </div>
+</section>
 
-    <form id="quiz-form">
-      <div id="quiz-questions"></div>
-      <div class="quiz-actions">
-        <button id="submit-quiz" class="btn" type="submit">Submit Answers</button>
-        <button id="new-quiz-bottom" class="btn outline" type="button">Try Another Quiz</button>
-      </div>
-    </form>
-    <div id="quiz-result" class="score-panel hidden" aria-live="polite"></div>
-  </section>
+<!-- CAREER -->
+<section class="page" id="career">
+  <div class="hero">
+    <span class="hero-tag">EXPLORE YOUR OPTIONS</span>
+    <h1>Your interests can guide your future.</h1>
+    <p>Career decisions do not need to be made all at once. Explore subjects, learn about real work, and discuss choices with teachers, family members or a school counsellor.</p>
+    <div class="hero-actions"><button class="btn btn-light" onclick="document.getElementById('careerExplorer').scrollIntoView({behavior:'smooth'})">Explore career fields ↓</button></div>
+  </div>
 
-  <section id="resources" class="page">
-    <div class="section-head">
-      <div>
-        <h2>Official learning resources</h2>
-        <p class="muted">Use official sources for the latest textbook, curriculum and sample-paper information.</p>
-      </div>
-    </div>
-    <a class="resource-link" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer">
-      <strong>NCERT Textbooks</strong>
-      Open the official textbook portal to find your current Class 10 books.
-    </a>
-    <a class="resource-link" href="https://cbseacademic.nic.in/" target="_blank" rel="noopener noreferrer">
-      <strong>CBSE Academic</strong>
-      Check the official academic site for curriculum updates and assessment material.
-    </a>
-    <a class="resource-link" href="https://www.cbse.gov.in/" target="_blank" rel="noopener noreferrer">
-      <strong>CBSE Official Website</strong>
-      Check official announcements and examination updates.
-    </a>
-    <div class="card" style="margin-top:20px">
-      <h3>How to use Studyhub effectively</h3>
-      <ol>
-        <li>Read the corresponding NCERT section first.</li>
-        <li>Use the chapter notes to revise the main ideas.</li>
-        <li>Practise formulas and worked examples on paper.</li>
-        <li>Attempt the revision questions without looking at the notes.</li>
-        <li>Take a quiz and revisit any topic you found difficult.</li>
-      </ol>
-      <p class="note">Studyhub is an independent learning aid, not an official NCERT or CBSE website.</p>
-    </div>
-  </section>
+  <div class="section-head" id="careerExplorer"><div><h2>Career fields to explore</h2><p>These are possibilities, not recommendations or guarantees. Different paths have different entry requirements.</p></div></div>
+  <div class="grid">
+    <article class="card"><div class="card-icon">💻</div><h3>Computing & Technology</h3><p>Software development, cybersecurity, data analysis, web design and IT support.</p><p><strong>Try:</strong> Build a small website or beginner Python project.</p></article>
+    <article class="card"><div class="card-icon">⚙️</div><h3>Engineering</h3><p>Mechanical, civil, electrical, electronics, computer and other engineering fields.</p><p><strong>Try:</strong> Explore how everyday machines work and strengthen Maths and Science.</p></article>
+    <article class="card"><div class="card-icon">🧪</div><h3>Science & Research</h3><p>Physics, chemistry, biology, environmental science and laboratory research.</p><p><strong>Try:</strong> Ask questions, keep observations and practise scientific reasoning.</p></article>
+    <article class="card"><div class="card-icon">📊</div><h3>Business & Economics</h3><p>Accounting, economics, entrepreneurship, finance, marketing and management.</p><p><strong>Try:</strong> Track a simple budget and learn how businesses make decisions.</p></article>
+    <article class="card"><div class="card-icon">🎨</div><h3>Design & Creative Work</h3><p>Graphic design, animation, game design, product design, film and communication.</p><p><strong>Try:</strong> Create a small portfolio of original work.</p></article>
+    <article class="card"><div class="card-icon">🌱</div><h3>Environment & Agriculture</h3><p>Environmental studies, agriculture, food science, forestry and sustainability.</p><p><strong>Try:</strong> Investigate a local environmental problem and possible solutions.</p></article>
+    <article class="card"><div class="card-icon">🏥</div><h3>Healthcare & Life Sciences</h3><p>Medicine, nursing, allied health, biotechnology and public health.</p><p><strong>Try:</strong> Learn about the study paths and eligibility requirements for each profession.</p></article>
+    <article class="card"><div class="card-icon">📚</div><h3>Education & Communication</h3><p>Teaching, writing, journalism, languages, training and public communication.</p><p><strong>Try:</strong> Explain a difficult school concept clearly to someone else.</p></article>
+    <article class="card"><div class="card-icon">🏛️</div><h3>Public Service & Law</h3><p>Public administration, law, policy, social work and community services.</p><p><strong>Try:</strong> Read about how public institutions work and practise critical thinking.</p></article>
+  </div>
 
-  <section id="planner" class="page">
-    <div class="section-head">
-      <div>
-        <h2>Study Planner</h2>
-        <p class="muted">Make a simple plan for today's study session.</p>
-      </div>
-    </div>
-    <div class="grid two">
-      <div class="card">
-        <h3>Today's goals</h3>
-        <form id="planner-form">
-          <label for="goal-input">What do you want to study?</label>
-          <input id="goal-input" class="field" placeholder="e.g. Revise electricity numericals" required maxlength="180">
-          <p><label for="goal-time">Study time</label></p>
-          <select id="goal-time" class="field">
-            <option>15 minutes</option>
-            <option>30 minutes</option>
-            <option>45 minutes</option>
-            <option>60 minutes</option>
-            <option>90 minutes</option>
-          </select>
-          <p><button class="btn" type="submit">Add goal</button></p>
-        </form>
-        <div id="planner-list"></div>
-        <button id="clear-planner" class="btn outline" type="button">Clear all goals</button>
-      </div>
-      <div class="card">
-        <h3>Suggested study routine</h3>
-        <div class="formula"><strong>Step 1 — Learn</strong><br>Read one NCERT concept carefully.</div>
-        <div class="formula"><strong>Step 2 — Practise</strong><br>Solve 3–5 questions without checking solutions.</div>
-        <div class="formula"><strong>Step 3 — Recall</strong><br>Close the book and write down what you remember.</div>
-        <div class="formula"><strong>Step 4 — Review</strong><br>Use a quiz to find topics that need more work.</div>
-        <p class="note">Your planner goals are stored locally in this browser. Avoid entering passwords or sensitive personal information.</p>
-      </div>
-    </div>
-  </section>
+  <div class="section-head"><div><h2>Self-reflection tool</h2><p>Use your answers to start a conversation—not to decide your whole future.</p></div></div>
+  <div class="card">
+    <label for="interest">1. Which activity interests you most?</label>
+    <select class="field" id="interest" style="margin:8px 0 17px">
+      <option value="">Choose an interest</option>
+      <option value="technology">Building apps, websites or solving technical problems</option>
+      <option value="science">Understanding nature, experiments or living things</option>
+      <option value="business">Money, markets, business or organising projects</option>
+      <option value="creative">Designing, drawing, storytelling or making games</option>
+      <option value="people">Teaching, helping people or communicating</option>
+      <option value="environment">Nature, agriculture or environmental problems</option>
+    </select>
+    <label for="strength">2. Which school activity do you most enjoy?</label>
+    <select class="field" id="strength" style="margin:8px 0 17px">
+      <option value="">Choose an activity</option>
+      <option value="maths">Solving numerical problems</option>
+      <option value="science">Explaining how things work</option>
+      <option value="writing">Writing and communicating</option>
+      <option value="design">Making and designing things</option>
+      <option value="organising">Planning and organising</option>
+    </select>
+    <label for="priority">3. What matters most to you in a future career?</label>
+    <select class="field" id="priority" style="margin:8px 0 17px">
+      <option value="">Choose a priority</option>
+      <option value="learning">Learning and discovery</option>
+      <option value="creativity">Creativity and independence</option>
+      <option value="service">Helping society</option>
+      <option value="stability">Stability and practical opportunities</option>
+      <option value="variety">Variety and new challenges</option>
+    </select>
+    <button class="btn" onclick="showCareerReflection()">Show my reflection</button>
+    <div id="careerResult" class="notice hidden" aria-live="polite"></div>
+    <p class="small">Your answers are processed in this page and are not sent to a career service. This is a reflection exercise, not a professional assessment.</p>
+  </div>
+
+  <div class="section-head"><div><h2>How to choose thoughtfully</h2></div></div>
+  <div class="card">
+    <div class="career-step"><div class="career-number">1</div><div><strong>Know yourself</strong><p class="small">Notice what you enjoy, what you want to improve and what problems interest you.</p></div></div>
+    <div class="career-step"><div class="career-number">2</div><div><strong>Explore the actual work</strong><p class="small">Read about daily tasks, education requirements, working conditions and opportunities.</p></div></div>
+    <div class="career-step"><div class="career-number">3</div><div><strong>Check the route</strong><p class="small">Compare subject choices, eligibility, course fees, scholarships and entrance requirements using official sources.</p></div></div>
+    <div class="career-step"><div class="career-number">4</div><div><strong>Talk it through</strong><p class="small">Discuss your ideas with a trusted adult, teacher or qualified school counsellor. You can change direction as you learn more.</p></div></div>
+  </div>
+</section>
 </main>
 
 <footer>
-  <p><strong>Studyhub</strong> — Learn one concept at a time.</p>
-  <p>Class 10 Mathematics and Science learning support.</p>
-  <p class="note" style="color:#d5e5dc">Use your current NCERT textbook and official CBSE information alongside these starter materials.</p>
+  <div class="footer-inner">
+    <div><strong style="font-size:21px">Studyhub</strong><p>Learn today. Grow every day.</p></div>
+    <div><p>Free Class 10 learning companion</p><p>Mathematics • Science • Revision • Career Exploration</p></div>
+    <div><p>Studyhub is an independent learning project, not an official CBSE or NCERT website.</p><p>Always verify exam requirements with official sources.</p></div>
+  </div>
 </footer>
+<div id="toast" class="hidden" role="status" aria-live="polite"></div>
 
 <script>
 "use strict";
 
-/* ---------------- CHAPTER CONTENT ----------------
-   Each chapter includes notes, key formulas/facts,
-   a worked example, and revision questions.
---------------------------------------------------- */
+/* ---------------- CHAPTER DATABASE ---------------- */
 
 const chapters = [
-  {subject:"Maths",name:"Real Numbers",
-   notes:["Every composite number can be expressed as a product of primes, uniquely apart from the order of factors.","Euclid's division lemma states that for positive integers a and b, a = bq + r, where 0 ≤ r < b.","For two positive integers, HCF × LCM = product of the two numbers."],
-   formulas:["Euclid's division lemma: a = bq + r, 0 ≤ r < b.","HCF(a,b) × LCM(a,b) = a × b."],
-   example:"Find the HCF of 26 and 91. 91 = 26 × 3 + 13, and 26 = 13 × 2 + 0. Therefore, HCF = 13.",
-   revision:["Use Euclid's algorithm to find the HCF of 135 and 225.","Explain why 7 × 11 × 13 + 13 is composite.","State the relation between HCF and LCM of two positive integers."]},
-  {subject:"Maths",name:"Polynomials",
-   notes:["A polynomial in x has non-negative integer powers of x.","The zeroes are the values of x for which p(x) = 0.","A quadratic polynomial has at most two zeroes."],
-   formulas:["For ax² + bx + c with zeroes α and β: α + β = −b/a.","For ax² + bx + c: αβ = c/a.","For a linear polynomial ax + b, its zero is −b/a, where a ≠ 0."],
-   example:"For x² − 5x + 6, the sum of zeroes is 5 and the product is 6. The polynomial factors as (x − 2)(x − 3), so its zeroes are 2 and 3.",
-   revision:["Find the zeroes of x² − 7x + 12.","Form a quadratic polynomial whose zeroes are 4 and −2.","For 2x² − 3x + 1, find the sum and product of its zeroes."]},
-  {subject:"Maths",name:"Pair of Linear Equations in Two Variables",
-   notes:["A pair of linear equations represents two straight lines.","Intersecting lines have one solution; parallel distinct lines have no solution; coincident lines have infinitely many solutions.","Common methods include substitution, elimination and graphical representation."],
-   formulas:["General form: a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0.","Unique solution when a₁/a₂ ≠ b₁/b₂.","No solution when a₁/a₂ = b₁/b₂ ≠ c₁/c₂.","Infinitely many solutions when a₁/a₂ = b₁/b₂ = c₁/c₂."],
-   example:"Solve x + y = 7 and x − y = 1. Adding gives 2x = 8, so x = 4. Substitution gives y = 3.",
-   revision:["Solve 2x + y = 8 and x − y = 1.","When do two linear equations have no solution?","Interpret the intersection of two lines graphically."]},
-  {subject:"Maths",name:"Quadratic Equations",
-   notes:["A quadratic equation has the form ax² + bx + c = 0, where a ≠ 0.","It can be solved by factorisation, completing the square or the quadratic formula.","The discriminant determines the nature of real roots."],
-   formulas:["x = (−b ± √(b² − 4ac))/(2a).","Discriminant D = b² − 4ac.","D > 0: two distinct real roots; D = 0: equal real roots; D < 0: no real roots."],
-   example:"Solve x² − 5x + 6 = 0. Factorise: (x − 2)(x − 3) = 0. Hence x = 2 or x = 3.",
-   revision:["Solve 2x² − 7x + 3 = 0.","Find the discriminant of 3x² + 2x + 1.","For what condition does a quadratic equation have equal roots?"]},
-  {subject:"Maths",name:"Arithmetic Progressions",
-   notes:["An arithmetic progression (AP) has a constant difference between consecutive terms.","The common difference may be positive, negative or zero.","The nth term lets us find any term without listing every previous term."],
-   formulas:["nth term: aₙ = a + (n − 1)d.","Sum of n terms: Sₙ = n/2 [2a + (n − 1)d].","Also, Sₙ = n/2 (a + l), where l is the last term."],
-   example:"Find the 10th term of 3, 7, 11, 15, ... Here a = 3 and d = 4. So a₁₀ = 3 + 9 × 4 = 39.",
-   revision:["Find the 20th term of 5, 8, 11, ...","Find the sum of the first 10 positive integers.","Find the common difference of 18, 13, 8, 3, ..."]},
-  {subject:"Maths",name:"Triangles",
-   notes:["Similar triangles have equal corresponding angles and proportional corresponding sides.","The Basic Proportionality Theorem relates a line parallel to one side of a triangle to the other two sides.","The Pythagoras theorem applies to right-angled triangles."],
-   formulas:["If ΔABC ~ ΔDEF, then AB/DE = BC/EF = AC/DF.","Pythagoras theorem: hypotenuse² = perpendicular² + base².","If DE ∥ BC in ΔABC, then AD/DB = AE/EC."],
-   example:"A right triangle has perpendicular sides 6 cm and 8 cm. Hypotenuse² = 6² + 8² = 100, so the hypotenuse is 10 cm.",
-   revision:["State the Basic Proportionality Theorem.","Two similar triangles have side ratio 2:3. Find their area ratio.","A right triangle has legs 9 cm and 12 cm. Find the hypotenuse."]},
-  {subject:"Maths",name:"Coordinate Geometry",
-   notes:["Coordinates locate a point using its horizontal x-coordinate and vertical y-coordinate.","The distance formula comes from Pythagoras theorem.","The section formula finds a point dividing a line segment in a given ratio."],
-   formulas:["Distance: √[(x₂ − x₁)² + (y₂ − y₁)²].","Midpoint: ((x₁ + x₂)/2, (y₁ + y₂)/2).","Area of triangle = ½|x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|."],
-   example:"Distance between (1,2) and (4,6) = √[(4−1)² + (6−2)²] = √25 = 5 units.",
-   revision:["Find the midpoint of (2,4) and (8,10).","Find the distance between (−1,3) and (2,7).","What does zero area indicate for three points?"]},
-  {subject:"Maths",name:"Introduction to Trigonometry",
-   notes:["Trigonometric ratios relate angles to side lengths in a right triangle.","The hypotenuse is opposite the right angle and is the longest side.","Use standard values and identities to simplify expressions."],
-   formulas:["sin θ = perpendicular/hypotenuse.","cos θ = base/hypotenuse; tan θ = perpendicular/base.","tan θ = sin θ/cos θ.","sin² θ + cos² θ = 1; 1 + tan² θ = sec² θ; 1 + cot² θ = cosec² θ."],
-   example:"If the perpendicular is 3 and hypotenuse is 5, then sin θ = 3/5. By Pythagoras, the base is 4, so cos θ = 4/5 and tan θ = 3/4.",
-   revision:["Write the values of sin 30° and cos 60°.","If tan θ = 3/4 for an acute angle, find sin θ.","Prove or verify sin² θ + cos² θ = 1 for θ = 30°."]},
-  {subject:"Maths",name:"Applications of Trigonometry",
-   notes:["Heights and distances problems often use an angle of elevation or depression.","Sketch a right triangle and label the known height, horizontal distance and angle.","Choose the ratio that connects the known and unknown sides."],
-   formulas:["tan θ = height/horizontal distance.","sin θ = height/slant distance.","Angle of elevation is measured upward from the horizontal."],
-   example:"A pole casts a situation where its height is 10 m and the horizontal distance to its tip's ground point is 10 m. tan θ = 10/10 = 1, so θ = 45°.",
-   revision:["Define angle of elevation.","A tree is 12 m high and the observation point is 12 m away on level ground. Find the angle of elevation.","Draw a labelled diagram for an angle of depression problem."]},
-  {subject:"Maths",name:"Circles",
-   notes:["A tangent touches a circle at exactly one point.","The radius drawn to the point of contact is perpendicular to the tangent.","Tangents drawn from the same external point have equal lengths."],
-   formulas:["If PA and PB are tangents from external point P, then PA = PB.","Radius ⟂ tangent at the point of contact."],
-   example:"If PA and PB are tangents from P and PA = 7 cm, then PB = 7 cm.",
-   revision:["State the tangent-radius theorem.","How many tangents can be drawn from a point outside a circle?","If two tangents from P are equal and one is 9 cm, find the other."]},
-  {subject:"Maths",name:"Areas Related to Circles",
-   notes:["A sector is the region between two radii and the included arc.","Arc length and sector area are proportional to the central angle.","Use π ≈ 22/7 or 3.14 as appropriate to the question."],
-   formulas:["Circumference = 2πr.","Area of circle = πr².","Arc length = (θ/360°) × 2πr.","Sector area = (θ/360°) × πr²."],
-   example:"For radius 7 cm, area = π × 7² = 49π cm², approximately 154 cm² using π = 22/7.",
-   revision:["Find the circumference of a circle of radius 14 cm.","Find the area of a 90° sector of a circle with radius 7 cm.","What fraction of a circle is a 60° sector?"]},
-  {subject:"Maths",name:"Surface Areas and Volumes",
-   notes:["Surface area measures the outside area of a solid; volume measures the space it occupies.","Convert all measurements into consistent units before calculating.","For combined solids, identify which surfaces are exposed."],
-   formulas:["Cylinder: V = πr²h; curved surface area = 2πrh.","Cone: V = ⅓πr²h; slant height l = √(r² + h²).","Sphere: V = 4/3πr³; surface area = 4πr².","Cuboid: V = lbh."],
-   example:"A cylinder with radius 3 cm and height 5 cm has volume π × 3² × 5 = 45π cm³.",
-   revision:["Find the volume of a cylinder with r = 7 cm and h = 10 cm.","State the volume formula for a cone.","How do you convert cm³ into litres?"]},
-  {subject:"Maths",name:"Statistics",
-   notes:["Statistics summarises data using measures such as mean, median and mode.","Grouped data can be analysed using class marks and frequencies.","Check that the total frequency is correct before calculating."],
-   formulas:["Mean = Σfᵢxᵢ / Σfᵢ.","Class mark = (upper class limit + lower class limit)/2.","Median = l + [(N/2 − cf)/f] × h for grouped data.","Mode = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h."],
-   example:"The mean of 2, 4 and 6 is (2 + 4 + 6)/3 = 4.",
-   revision:["Find the mean of 5, 7, 8 and 10.","What is a class mark?","Which measure identifies the most frequent observation?"]},
-  {subject:"Maths",name:"Probability",
-   notes:["Probability measures how likely an event is to occur.","For equally likely outcomes, count favourable outcomes and divide by total outcomes.","Probability ranges from 0 to 1."],
-   formulas:["P(E) = favourable outcomes / total equally likely outcomes.","P(not E) = 1 − P(E).","0 ≤ P(E) ≤ 1."],
-   example:"A fair die has six equally likely outcomes. Probability of rolling a 4 is 1/6.",
-   revision:["Find the probability of getting an even number on a fair die.","What is the probability of an impossible event?","A bag has 3 red and 2 blue balls. Find the probability of drawing a blue ball."]},
+ {id:"m1",subject:"Maths",name:"Real Numbers",topics:["Euclid's division algorithm","Fundamental theorem of arithmetic","HCF and LCM"],formulas:["a = bq + r, where 0 ≤ r < b","For two positive integers: HCF × LCM = product of the integers"],notes:["Euclid's division algorithm expresses a = bq + r, with a dividend, b divisor, q quotient and r remainder.","The Fundamental Theorem of Arithmetic states that every composite number has a unique prime factorisation, apart from the order of the factors.","To find an HCF using Euclid's algorithm, repeatedly divide and use the previous divisor as the next dividend until the remainder is zero.","A terminating decimal has a denominator whose prime factors, in lowest terms, are only 2 and/or 5."],example:{q:"Find the HCF of 135 and 225.",steps:["225 = 135 × 1 + 90","135 = 90 × 1 + 45","90 = 45 × 2 + 0"],answer:"HCF = 45"},questions:["State Euclid's division lemma.","Find the HCF of 96 and 404.","When does a rational number have a terminating decimal expansion?"]},
+ {id:"m2",subject:"Maths",name:"Polynomials",topics:["Zeroes of polynomials","Relationship between zeroes and coefficients","Division algorithm"],formulas:["For ax² + bx + c: α + β = −b/a","For ax² + bx + c: αβ = c/a","For a quadratic polynomial: p(x) = a(x − α)(x − β)"],notes:["A zero of a polynomial p(x) is a value of x for which p(x) = 0.","A quadratic polynomial can have at most two distinct real zeroes.","For ax² + bx + c, the sum of zeroes is −b/a and their product is c/a.","You can form a quadratic polynomial from zeroes α and β using x² − (α + β)x + αβ, multiplied by any non-zero constant."],example:{q:"Form a quadratic polynomial whose zeroes are 2 and 3.",steps:["Sum of zeroes = 2 + 3 = 5","Product of zeroes = 2 × 3 = 6","Use x² − (sum)x + product"],answer:"x² − 5x + 6"},questions:["Find the zeroes of x² − 7x + 12.","Verify the relation between zeroes and coefficients for 2x² − 5x + 2.","Form a polynomial with zeroes −2 and 4."]},
+ {id:"m3",subject:"Maths",name:"Pair of Linear Equations in Two Variables",topics:["Graphical solution","Substitution and elimination","Consistency of equations"],formulas:["a₁/a₂ ≠ b₁/b₂: unique solution","a₁/a₂ = b₁/b₂ ≠ c₁/c₂: no solution","a₁/a₂ = b₁/b₂ = c₁/c₂: infinitely many solutions"],notes:["A pair of linear equations represents two straight lines.","Intersecting lines have one solution; parallel distinct lines have no solution; coincident lines have infinitely many solutions.","The substitution method isolates one variable and substitutes it into the other equation.","The elimination method combines equations to remove one variable."],example:{q:"Solve x + y = 7 and x − y = 1.",steps:["Add the equations: 2x = 8","So x = 4","Substitute into x + y = 7"],answer:"x = 4, y = 3"},questions:["Solve 2x + y = 7 and x − y = 2.","What do parallel lines represent in a pair of equations?","State the condition for a unique solution."]},
+ {id:"m4",subject:"Maths",name:"Quadratic Equations",topics:["Standard form","Factorisation","Quadratic formula and discriminant"],formulas:["ax² + bx + c = 0, a ≠ 0","x = (−b ± √(b² − 4ac))/(2a)","D = b² − 4ac","D > 0: two distinct real roots; D = 0: equal real roots; D < 0: no real roots"],notes:["A quadratic equation has degree two and can be written as ax² + bx + c = 0 with a ≠ 0.","Solve by factorisation, completing the square or the quadratic formula.","The discriminant D = b² − 4ac determines the nature of the roots.","Always bring all terms to one side before identifying a, b and c."],example:{q:"Solve x² − 5x + 6 = 0.",steps:["Factorise: (x − 2)(x − 3) = 0","Set each factor equal to zero"],answer:"x = 2 or x = 3"},questions:["Solve x² − 9 = 0.","Find the discriminant of 2x² − 4x + 2.","When does a quadratic equation have equal roots?"]},
+ {id:"m5",subject:"Maths",name:"Arithmetic Progressions",topics:["Common difference","nth term","Sum of n terms"],formulas:["aₙ = a + (n − 1)d","Sₙ = n/2 [2a + (n − 1)d]","Sₙ = n/2 (a + l)"],notes:["An arithmetic progression (AP) is a sequence with a constant difference between consecutive terms.","The first term is a, the common difference is d and the nth term is aₙ.","Use the nth-term formula to find a particular term.","Use the sum formula to find the total of the first n terms."],example:{q:"Find the 10th term of 3, 7, 11, 15, ...",steps:["First term a = 3 and common difference d = 4","a₁₀ = a + (10 − 1)d","a₁₀ = 3 + 9 × 4"],answer:"39"},questions:["Find the 20th term of 5, 8, 11, ...","Find the sum of the first 10 positive integers.","Is 2, 5, 8, 11 an AP? Explain."]},
+ {id:"m6",subject:"Maths",name:"Triangles",topics:["Similarity criteria","Basic proportionality theorem","Areas of similar triangles"],formulas:["AA, SAS and SSS similarity criteria","For similar triangles: ratio of areas = square of ratio of corresponding sides","Basic proportionality theorem: a line parallel to one side divides the other two sides proportionally"],notes:["Similar triangles have equal corresponding angles and proportional corresponding sides.","The AA criterion establishes similarity when two pairs of corresponding angles are equal.","The ratio of areas of similar triangles equals the square of the ratio of corresponding sides.","A Pythagorean relation applies to right-angled triangles: hypotenuse² = base² + perpendicular²."],example:{q:"Two similar triangles have corresponding sides in ratio 2:3. Find the ratio of their areas.",steps:["Side ratio = 2:3","Square both terms for the area ratio"],answer:"4:9"},questions:["State the AA similarity criterion.","State the Pythagoras theorem.","If side ratio is 3:5, find the area ratio."]},
+ {id:"m7",subject:"Maths",name:"Coordinate Geometry",topics:["Distance formula","Section formula","Area of a triangle"],formulas:["Distance = √[(x₂ − x₁)² + (y₂ − y₁)²]","Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)","Triangle area = ½|x₁(y₂−y₃)+x₂(y₃−y₁)+x₃(y₁−y₂)|"],notes:["Coordinates locate a point using its horizontal x-coordinate and vertical y-coordinate.","The distance formula comes from the Pythagorean theorem.","The midpoint is halfway between two endpoints.","A triangle's coordinate area is zero when the three points are collinear."],example:{q:"Find the distance between (1,2) and (4,6).",steps:["Difference in x = 4 − 1 = 3","Difference in y = 6 − 2 = 4","Distance = √(3² + 4²)"],answer:"5 units"},questions:["Find the midpoint of (2,4) and (6,8).","Find the distance between (0,0) and (5,12).","What does zero triangle area indicate?"]},
+ {id:"m8",subject:"Maths",name:"Introduction to Trigonometry",topics:["Trigonometric ratios","Standard angles","Identities"],formulas:["sin θ = perpendicular/hypotenuse","cos θ = base/hypotenuse","tan θ = perpendicular/base","sin²θ + cos²θ = 1","1 + tan²θ = sec²θ","1 + cot²θ = cosec²θ"],notes:["Trigonometric ratios relate angles to side lengths in a right-angled triangle.","Remember that tan θ = sin θ / cos θ when cos θ is non-zero.","Learn the exact values of sin, cos and tan at 0°, 30°, 45°, 60° and 90° where defined.","Use identities to simplify expressions and prove equalities; note where a denominator cannot be zero."],example:{q:"If sin θ = 3/5 and θ is acute, find cos θ.",steps:["Hypotenuse = 5 and perpendicular = 3","Base² = 5² − 3² = 16","Base = 4"],answer:"cos θ = 4/5"},questions:["Write sin θ and cos θ as side ratios.","Evaluate sin 30° + cos 60°.","State the identity connecting tan θ and sec θ."]},
+ {id:"m9",subject:"Maths",name:"Applications of Trigonometry",topics:["Angles of elevation","Angles of depression","Heights and distances"],formulas:["tan θ = height/horizontal distance","sin θ = height/slant distance","cos θ = horizontal distance/slant distance"],notes:["An angle of elevation is measured upward from the horizontal line of sight.","An angle of depression is measured downward from the horizontal line of sight.","Draw a clear diagram, label the right angle, identify known sides and choose the appropriate ratio.","Keep units consistent and check whether the answer is physically reasonable."],example:{q:"A pole is 10 m high. The horizontal distance from its foot is 10 m. Find the angle of elevation.",steps:["tan θ = height/distance = 10/10 = 1","The acute angle whose tangent is 1 is 45°"],answer:"θ = 45°"},questions:["Define angle of elevation.","Which ratio connects opposite and adjacent sides?","Draw a labelled diagram for a building's height problem."]},
+ {id:"m10",subject:"Maths",name:"Circles",topics:["Tangent and radius","Tangents from an external point"],formulas:["Radius is perpendicular to the tangent at the point of contact","Tangents from the same external point are equal in length"],notes:["A tangent touches a circle at exactly one point.","The radius drawn to the point of contact is perpendicular to the tangent.","The lengths of two tangents drawn from the same external point are equal.","Use the right triangle formed by the centre, contact point and external point when finding tangent length."],example:{q:"A circle has radius 5 cm. An external point is 13 cm from the centre. Find the tangent length.",steps:["Radius is perpendicular to tangent","Tangent² = 13² − 5² = 169 − 25 = 144"],answer:"Tangent length = 12 cm"},questions:["What is a tangent?","State the tangent-radius theorem.","Tangents from one external point are 7 cm and x cm. Find x."]},
+ {id:"m11",subject:"Maths",name:"Areas Related to Circles",topics:["Circumference","Area of a circle","Sectors and arcs"],formulas:["Circumference = 2πr","Area = πr²","Sector area = (θ/360°)πr²","Arc length = (θ/360°)2πr"],notes:["Radius is the distance from the centre to the circumference; diameter equals twice the radius.","A sector is the region between two radii and the arc they intercept.","The sector's fraction of the full circle equals θ/360° when θ is in degrees.","For composite shapes, split the diagram into simpler shapes and add or subtract their areas."],example:{q:"Find the area of a circle of radius 7 cm using π = 22/7.",steps:["Area = πr²","Area = (22/7) × 7 × 7"],answer:"154 cm²"},questions:["Find the circumference of radius 7 cm.","Find the area of a semicircle of radius 14 cm.","What fraction of a circle is a 90° sector?"]},
+ {id:"m12",subject:"Maths",name:"Surface Areas and Volumes",topics:["Cube and cuboid","Cylinder, cone and sphere","Combined solids"],formulas:["Cuboid volume = lbh","Cylinder volume = πr²h","Cone volume = ⅓πr²h","Sphere volume = ⁴⁄₃πr³","Sphere surface area = 4πr²","Cone curved surface area = πrl"],notes:["Surface area measures the outside covering; volume measures the space occupied.","Write all measurements in consistent units before calculating.","For a combined solid, identify which surfaces are exposed and which are joined internally.","A cone's slant height l, radius r and height h satisfy l² = r² + h²."],example:{q:"Find the volume of a cylinder with radius 2 cm and height 5 cm.",steps:["V = πr²h","V = π × 2² × 5"],answer:"20π cm³"},questions:["Write the volume formula for a sphere.","Find the volume of a cube of side 4 cm.","What is the difference between volume and surface area?"]},
+ {id:"m13",subject:"Maths",name:"Statistics",topics:["Mean","Median","Mode","Grouped data"],formulas:["Mean = sum of observations / number of observations","Grouped mean = Σfᵢxᵢ / Σfᵢ","Median = l + [(N/2 − cf)/f]h","Mode = l + [(f₁ − f₀)/(2f₁ − f₀ − f₂)]h"],notes:["Mean uses every observation and can be affected by extreme values.","Median is the middle value after sorting the data, or the average of the two middle values for an even count.","Mode is the most frequently occurring value.","For grouped data, identify class intervals, frequencies, class marks and cumulative frequencies carefully."],example:{q:"Find the mean of 2, 4, 6 and 8.",steps:["Sum = 2 + 4 + 6 + 8 = 20","Number of observations = 4","Mean = 20/4"],answer:"5"},questions:["Find the median of 3, 7, 2, 8, 5.","Find the mean of 10, 20 and 30.","What does frequency mean?"]},
+ {id:"m14",subject:"Maths",name:"Probability",topics:["Random experiments","Outcomes","Theoretical probability"],formulas:["P(E) = favourable outcomes / total equally likely outcomes","0 ≤ P(E) ≤ 1","P(not E) = 1 − P(E)"],notes:["An outcome is a possible result of an experiment.","An event is a collection of outcomes.","For equally likely outcomes, divide the number of favourable outcomes by the total number of possible outcomes.","An impossible event has probability 0; a certain event has probability 1."],example:{q:"A fair die is rolled. Find the probability of an even number.",steps:["Possible outcomes: 1, 2, 3, 4, 5, 6","Even outcomes: 2, 4, 6","Favourable outcomes = 3; total = 6"],answer:"P(even) = 3/6 = 1/2"},questions:["What is the probability of getting a 6 on a fair die?","What is the probability of an impossible event?","A coin is tossed. What is the probability of heads?"]},
 
-  {subject:"Science",name:"Chemical Reactions and Equations",
-   notes:["A chemical reaction forms new substances.","A balanced chemical equation has the same number of atoms of each element on both sides.","Common reaction types include combination, decomposition, displacement, double displacement and redox reactions."],
-   formulas:["Balance equations by changing coefficients, never by changing chemical formula subscripts.","Oxidation commonly involves addition of oxygen or loss of hydrogen; reduction commonly involves loss of oxygen or gain of hydrogen."],
-   example:"Hydrogen reacts with oxygen: 2H₂ + O₂ → 2H₂O. Both sides contain four hydrogen atoms and two oxygen atoms.",
-   revision:["Balance Fe + O₂ → Fe₂O₃.","What is a decomposition reaction?","Identify the reaction type: CaO + H₂O → Ca(OH)₂."]},
-  {subject:"Science",name:"Acids, Bases and Salts",
-   notes:["Acids produce H⁺ ions in aqueous solution; bases provide OH⁻ ions or accept protons, depending on the model used.","Indicators help identify acidic and basic solutions.","Neutralisation is a reaction between an acid and a base, commonly producing salt and water."],
-   formulas:["Acid + base → salt + water.","pH below 7: acidic; pH 7: neutral; pH above 7: basic at about 25°C.","Baking soda: NaHCO₃; washing soda: Na₂CO₃·10H₂O; bleaching powder: CaOCl₂."],
-   example:"Hydrochloric acid reacts with sodium hydroxide: HCl + NaOH → NaCl + H₂O.",
-   revision:["What happens to blue litmus in an acidic solution?","Write the formula of baking soda.","Why should acids be added to water carefully during dilution?"]},
-  {subject:"Science",name:"Metals and Non-metals",
-   notes:["Many metals conduct heat and electricity and can be beaten into sheets or drawn into wires.","Many non-metals are poor conductors, but graphite is an important exception.","Reactivity determines how metals react with water, acids and other substances."],
-   formulas:["Metal + oxygen → metal oxide (often basic).","Reactive metal + dilute acid → salt + hydrogen, where the metal is sufficiently reactive.","Ionic compounds are formed by transfer of electrons."],
-   example:"Magnesium reacts with oxygen to form magnesium oxide: 2Mg + O₂ → 2MgO.",
-   revision:["Why is sodium stored under kerosene or another suitable oil?","What is an ionic bond?","Name one non-metal that conducts electricity."]},
-  {subject:"Science",name:"Carbon and Its Compounds",
-   notes:["Carbon forms covalent bonds and can create long chains, branches and rings.","Saturated compounds have only single carbon-carbon bonds; unsaturated compounds have double or triple bonds.","Functional groups influence the properties and reactions of organic compounds."],
-   formulas:["Alkanes: CₙH₂ₙ₊₂; alkenes with one double bond: CₙH₂ₙ; alkynes with one triple bond: CₙH₂ₙ₋₂ for open-chain compounds.","Ethanol: C₂H₅OH; ethanoic acid: CH₃COOH."],
-   example:"Ethane, C₂H₆, has a single bond between its carbon atoms and is a saturated hydrocarbon.",
-   revision:["What is catenation?","Differentiate saturated and unsaturated hydrocarbons.","Name the functional group in ethanol."]},
-  {subject:"Science",name:"Life Processes",
-   notes:["Life processes include nutrition, respiration, transport and excretion.","Plants make food by photosynthesis using light energy, carbon dioxide and water.","The human circulatory system transports substances; kidneys help remove nitrogenous wastes."],
-   formulas:["Photosynthesis: carbon dioxide + water → glucose + oxygen, in the presence of light and chlorophyll.","Aerobic respiration releases energy using oxygen; anaerobic respiration occurs without oxygen."],
-   example:"During photosynthesis, leaves absorb carbon dioxide and use light energy to make carbohydrates; oxygen is released.",
-   revision:["What is the role of chlorophyll?","What is the function of nephrons?","How is the small intestine adapted for absorption?"]},
-  {subject:"Science",name:"Control and Coordination",
-   notes:["The nervous system carries electrical impulses for rapid communication.","Hormones are chemical messengers released by endocrine glands.","Plants coordinate some responses through growth movements and plant hormones."],
-   formulas:["Reflex pathway: receptor → sensory neuron → spinal cord/central nervous system → motor neuron → effector.","Insulin helps regulate blood glucose; adrenaline prepares the body for emergency action."],
-   example:"Touching a hot object triggers a rapid reflex response that helps move the hand away.",
-   revision:["What is a reflex action?","Name the gland that produces insulin.","What is the role of auxin in plants?"]},
-  {subject:"Science",name:"How Do Organisms Reproduce?",
-   notes:["Asexual reproduction generally involves one parent and does not use fusion of gametes.","Sexual reproduction involves formation and fusion of gametes.","Reproductive health includes accurate knowledge, hygiene, consent and responsible health decisions."],
-   formulas:["Asexual reproduction examples: fission, budding, fragmentation and spore formation.","Fertilisation is the fusion of male and female gametes."],
-   example:"Yeast can reproduce by budding: a small outgrowth develops and separates from the parent cell.",
-   revision:["Give one example of binary fission.","What is fertilisation?","State one difference between sexual and asexual reproduction."]},
-  {subject:"Science",name:"Heredity",
-   notes:["Heredity is the transmission of traits from parents to offspring.","Genes are units of inheritance located on chromosomes.","In a simple Mendelian cross, alleles can be dominant or recessive."],
-   formulas:["For a simple Tt × Tt cross, genotype ratio is 1 TT : 2 Tt : 1 tt.","The expected phenotype ratio in a complete-dominance Tt × Tt cross is 3 dominant : 1 recessive."],
-   example:"In a Tt × Tt cross, each parent can contribute T or t. The combinations are TT, Tt, Tt and tt.",
-   revision:["What is a gene?","Distinguish genotype and phenotype.","Why do offspring inherit traits from both parents?"]},
-  {subject:"Science",name:"Light: Reflection and Refraction",
-   notes:["Reflection is the return of light from a surface; refraction is the change in direction as light passes between media.","A convex lens converges parallel rays; a concave lens diverges them.","Use the Cartesian sign convention consistently in numerical problems."],
-   formulas:["Mirror formula: 1/f = 1/v + 1/u.","Lens formula: 1/f = 1/v − 1/u.","Magnification for a mirror: m = −v/u; for a lens: m = v/u.","Power of a lens: P = 1/f, where f is in metres; unit is dioptre."],
-   example:"A lens has focal length +0.5 m. Its power is P = 1/0.5 = +2 D, indicating a converging lens.",
-   revision:["State the laws of reflection.","What is the SI unit of lens power?","What type of lens is used to correct myopia?"]},
-  {subject:"Science",name:"The Human Eye and the Colourful World",
-   notes:["The eye lens changes shape to focus images on the retina; this is accommodation.","Myopia is corrected using a concave lens; hypermetropia is corrected using a convex lens.","Dispersion separates white light into its component colours."],
-   formulas:["Power of a lens: P = 1/f, with focal length f in metres.","Myopia: distant objects are blurred; a diverging lens is used for correction.","Hypermetropia: nearby objects are blurred; a converging lens is used for correction."],
-   example:"A corrective lens has focal length −0.25 m. Its power is 1/(−0.25) = −4 D.",
-   revision:["What is accommodation?","Why does a prism disperse white light?","Name the lens used to correct hypermetropia."]},
-  {subject:"Science",name:"Electricity",
-   notes:["Electric current is the rate of flow of electric charge.","Ohm's law states that current through a conductor is directly proportional to voltage when physical conditions remain constant.","Resistors in series carry the same current; parallel branches have the same potential difference."],
-   formulas:["I = Q/t; V = IR.","Series: R = R₁ + R₂ + ...","Parallel: 1/R = 1/R₁ + 1/R₂ + ...","Power: P = VI = I²R = V²/R.","Electrical energy: E = Pt."],
-   example:"A 6 Ω resistor is connected across 12 V. By Ohm's law, I = V/R = 12/6 = 2 A.",
-   revision:["State Ohm's law.","Find the current through a 10 Ω resistor connected to 5 V.","Why is an ammeter connected in series?"]},
-  {subject:"Science",name:"Magnetic Effects of Electric Current",
-   notes:["An electric current produces a magnetic field around a conductor.","The direction of the magnetic field around a straight current-carrying wire can be found using the right-hand thumb rule.","An electric motor converts electrical energy into mechanical energy."],
-   formulas:["Right-hand thumb rule: thumb points in conventional current direction; curled fingers show magnetic field direction.","A fuse is connected in series and melts when excessive current flows.","A solenoid produces a field similar to that of a bar magnet."],
-   example:"When current in a straight wire increases, the magnetic field around it becomes stronger, if the distance from the wire stays the same.",
-   revision:["What does the right-hand thumb rule show?","What is the role of a fuse?","State the energy conversion in an electric motor."]},
-  {subject:"Science",name:"Our Environment",
-   notes:["An ecosystem includes organisms and their physical environment.","Food chains show feeding relationships and energy transfer.","Decomposers break down dead matter and return nutrients to the environment."],
-   formulas:["A food chain commonly begins with producers, followed by consumers.","Only a fraction of energy is transferred to the next trophic level; the commonly taught 10% rule is an approximation."],
-   example:"Grass → grasshopper → frog → snake is an example of a food chain.",
-   revision:["What is a decomposer?","Why are food chains usually limited in length?","Differentiate biodegradable and non-biodegradable waste."]},
-  {subject:"Science",name:"Periodic Classification of Elements",
-   notes:["The modern periodic table arranges elements in increasing atomic number.","Elements in the same group often have similar chemical properties because of their valence-electron patterns.","Across a period, properties change in a regular pattern."],
-   formulas:["Modern periodic law: properties of elements are periodic functions of their atomic numbers.","Periods are horizontal rows; groups are vertical columns."],
-   example:"Sodium and potassium are in Group 1 and have similar chemical properties because each has one valence electron.",
-   revision:["What determines an element's position in the modern periodic table?","What is a group?","Why do elements in one group often behave similarly?"]}
+ {id:"s1",subject:"Science",name:"Chemical Reactions and Equations",topics:["Balancing equations","Types of reactions","Oxidation and reduction"],formulas:["Reactants → Products","Mass is conserved in a chemical reaction"],notes:["A chemical equation represents a chemical reaction using symbols and formulae.","Balance equations by changing coefficients, never the subscripts in chemical formulae.","Combination reactions form one product; decomposition reactions break a compound into simpler substances.","Oxidation can involve gain of oxygen or loss of hydrogen; reduction can involve loss of oxygen or gain of hydrogen.","Corrosion and rancidity are examples of oxidation-related processes."],example:{q:"Balance: H₂ + O₂ → H₂O",steps:["There are 2 oxygen atoms on the left and 1 on the right.","Place 2 before H₂O.","Place 2 before H₂ to balance hydrogen."],answer:"2H₂ + O₂ → 2H₂O"},questions:["What is a balanced chemical equation?","Give one example of a decomposition reaction.","Define oxidation in terms of oxygen." ]},
+ {id:"s2",subject:"Science",name:"Acids, Bases and Salts",topics:["Indicators and pH","Neutralisation","Common salts"],formulas:["Acid + base → salt + water (neutralisation)","pH below 7: acidic; pH 7: neutral; pH above 7: basic at 25°C"],notes:["Acids in aqueous solution produce hydrogen ions; bases in aqueous solution produce hydroxide ions in the Arrhenius description.","Litmus, phenolphthalein and methyl orange can help distinguish acidic and basic solutions.","The pH scale indicates how acidic or basic a solution is.","Baking soda is sodium hydrogen carbonate, NaHCO₃. Washing soda is hydrated sodium carbonate, commonly Na₂CO₃·10H₂O.","Plaster of Paris is calcium sulfate hemihydrate, CaSO₄·½H₂O; it reacts with water to form gypsum."],example:{q:"What forms when hydrochloric acid reacts with sodium hydroxide?",steps:["Identify acid: HCl; base: NaOH.","Neutralisation produces a salt and water."],answer:"HCl + NaOH → NaCl + H₂O"},questions:["What is the pH of a neutral solution at 25°C?","Write the formula of baking soda.","What is neutralisation?"]},
+ {id:"s3",subject:"Science",name:"Metals and Non-metals",topics:["Physical properties","Reactivity series","Ionic compounds"],formulas:["Metal + oxygen → generally metal oxide","Metal + dilute acid → salt + hydrogen (for suitable reactive metals)"],notes:["Metals are generally lustrous, malleable, ductile and good conductors, with important exceptions.","Non-metals are generally poor conductors and brittle when solid; graphite is a notable conducting non-metal.","More reactive metals can displace less reactive metals from suitable salt solutions.","Ionic compounds are formed by electron transfer and usually have high melting points; they conduct electricity when molten or dissolved, not usually as solids.","Corrosion can be reduced by painting, oiling, galvanising or other suitable protective methods."],example:{q:"What happens when zinc reacts with dilute hydrochloric acid?",steps:["Zinc is reactive enough to displace hydrogen from dilute HCl.","A salt and hydrogen gas are formed."],answer:"Zn + 2HCl → ZnCl₂ + H₂"},questions:["Why do ionic compounds conduct electricity when molten?","What is galvanisation?","Why is graphite an exception among non-metals?"]},
+ {id:"s4",subject:"Science",name:"Carbon and Its Compounds",topics:["Covalent bonding","Hydrocarbons","Functional groups"],formulas:["Alkanes: CₙH₂ₙ₊₂ (open-chain saturated hydrocarbons)","Alkenes: CₙH₂ₙ (one double bond in an open chain)","Ethanol: C₂H₅OH; ethanoic acid: CH₃COOH"],notes:["Carbon forms four covalent bonds and can bond to itself, producing chains and rings.","Saturated hydrocarbons have only carbon-carbon single bonds; unsaturated compounds contain double or triple bonds.","Functional groups help determine the characteristic chemical reactions of organic compounds.","Ethanol is an alcohol and ethanoic acid is a carboxylic acid.","Soap molecules have a water-attracting part and an oil-attracting part that help remove oily dirt."],example:{q:"Name CH₃COOH.",steps:["Identify the two-carbon carboxylic acid.","Its common name is acetic acid."],answer:"Ethanoic acid"},questions:["What is a covalent bond?","Name the functional group in ethanol.","What is the difference between saturated and unsaturated hydrocarbons?"]},
+ {id:"s5",subject:"Science",name:"Life Processes",topics:["Nutrition","Respiration","Transport and excretion"],formulas:["Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (light and chlorophyll)"],notes:["Life processes include nutrition, respiration, transportation and excretion.","Autotrophs prepare food from simple inorganic substances; green plants use photosynthesis.","Aerobic respiration releases energy using oxygen; anaerobic pathways release energy without oxygen and have different products.","In humans, the heart circulates blood; arteries generally carry blood away from the heart and veins towards it.","The kidneys filter blood and help remove metabolic wastes while regulating water and salts."],example:{q:"Why are alveoli suited for gas exchange?",steps:["They are numerous, giving a large surface area.","Their walls are thin and moist.","They are surrounded by a rich capillary network."],answer:"These features enable efficient diffusion of oxygen and carbon dioxide."},questions:["What is the role of bile?","Where does gas exchange occur in human lungs?","What is the basic function of kidneys?"]},
+ {id:"s6",subject:"Science",name:"Control and Coordination",topics:["Nervous system","Reflex action","Plant hormones"],formulas:["Receptor → sensory neuron → CNS/interneuron → motor neuron → effector (simplified reflex pathway)"],notes:["The nervous system detects stimuli, processes information and coordinates responses.","A reflex action is a rapid, automatic response; the pathway involved is called a reflex arc.","Hormones are chemical messengers carried to target tissues.","Auxin helps coordinate plant growth responses; insulin helps regulate blood glucose; adrenaline prepares the body for emergency responses.","The brain, spinal cord and nerves have different but connected roles."],example:{q:"Why can a reflex response be fast?",steps:["A reflex pathway can be coordinated through the spinal cord.","This can produce a rapid response without waiting for conscious processing by the brain."],answer:"It provides a quick protective response; the brain is still informed."},questions:["What is a hormone?","What is the role of a reflex arc?","Name one plant hormone and one function."]},
+ {id:"s7",subject:"Science",name:"How Do Organisms Reproduce?",topics:["Asexual reproduction","Sexual reproduction","Reproductive health"],formulas:["Fertilisation: fusion of male and female gametes"],notes:["Reproduction allows organisms to produce offspring and continue their species.","Asexual reproduction generally involves one parent and no fusion of gametes; binary fission and budding are examples.","Sexual reproduction involves gametes and produces genetic variation.","In flowering plants, pollination transfers pollen to the stigma; fertilisation occurs after the male gamete reaches the ovule.","Reproductive health includes accurate information, hygiene, consent, and access to appropriate healthcare."],example:{q:"How does binary fission differ from budding?",steps:["In binary fission, one parent cell divides into two daughter cells.","In budding, a new individual develops as an outgrowth on the parent."],answer:"They differ in how the new individual develops."},questions:["What is fertilisation?","Give one example of asexual reproduction.","Differentiate pollination and fertilisation."]},
+ {id:"s8",subject:"Science",name:"Heredity",topics:["Inherited traits","Genes and chromosomes","Mendel's work"],formulas:["For a simple Aa × Aa cross, genotype ratio is 1 AA : 2 Aa : 1 aa"],notes:["Heredity is the transmission of traits from parents to offspring.","Genes are DNA segments that contribute to inherited characteristics; genes are located on chromosomes.","In simple Mendelian inheritance, a dominant allele can mask the effect of a recessive allele in a heterozygote.","Variation arises through genetic differences and other influences.","Human sex determination commonly involves XX and XY chromosome patterns, with the egg contributing an X chromosome and sperm contributing X or Y."],example:{q:"In a simple Aa × Aa cross, what is the probability of aa?",steps:["Possible combinations are AA, Aa, Aa and aa.","One of the four combinations is aa."],answer:"1/4, or 25%"},questions:["What is a gene?","What is the difference between genotype and phenotype?","What are chromosomes made primarily of?"]},
+ {id:"s9",subject:"Science",name:"Light: Reflection and Refraction",topics:["Mirror formula","Lens formula","Magnification and power"],formulas:["Mirror formula: 1/f = 1/v + 1/u","Lens formula: 1/f = 1/v − 1/u","Magnification for a lens: m = v/u","Power of a lens: P = 1/f (f in metres), unit dioptre"],notes:["Reflection is the return of light into the same medium after striking a surface.","Refraction is the change in direction of light when it passes between media because its speed changes.","A concave lens diverges parallel rays; a convex lens converges parallel rays in ordinary air.","Use the Cartesian sign convention consistently when applying mirror and lens formulae.","A lens with focal length −0.5 m has power −2 D; negative power indicates a diverging lens."],example:{q:"Find the power of a convex lens with focal length 0.5 m.",steps:["Power P = 1/f, with f in metres.","P = 1/0.5"],answer:"+2 dioptres"},questions:["State the laws of reflection.","What is the power of a lens of focal length −0.25 m?","What type of lens is generally used to correct myopia?"]},
+ {id:"s10",subject:"Science",name:"The Human Eye and the Colourful World",topics:["Accommodation","Vision defects","Dispersion and scattering"],formulas:["Power of a lens P = 1/f (f in metres)"],notes:["The eye lens changes its focal length to focus objects at different distances; this is accommodation.","Myopia makes distant objects appear blurred and is generally corrected using a concave lens.","Hypermetropia makes nearby objects appear blurred and is generally corrected using a convex lens.","Dispersion separates white light into its component colours.","Scattering helps explain why the sky appears blue and why the Sun can appear reddish near the horizon."],example:{q:"Why does the sky appear blue?",steps:["Shorter wavelengths of visible light are scattered more strongly by air molecules than longer wavelengths.","Scattered light from the sky reaches our eyes from many directions."],answer:"The stronger scattering of shorter-wavelength light makes the sky appear blue."},questions:["What is accommodation?","Which lens generally corrects hypermetropia?","What is dispersion of light?"]},
+ {id:"s11",subject:"Science",name:"Electricity",topics:["Current and potential difference","Ohm's law","Resistance and power"],formulas:["I = Q/t","V = IR","R = ρl/A","P = VI = I²R = V²/R","Series: R = R₁ + R₂ + ...","Parallel: 1/R = 1/R₁ + 1/R₂ + ..."],notes:["Electric current is the rate of flow of charge; its SI unit is the ampere.","Potential difference is the work done per unit charge; its SI unit is the volt.","Ohm's law states that current is proportional to voltage for a conductor under constant physical conditions.","Resistance depends on the material, length and cross-sectional area of a wire.","An ammeter has very low resistance and is connected in series; a voltmeter has high resistance and is connected in parallel."],example:{q:"A 6 Ω resistor is connected across 12 V. Find current.",steps:["Use Ohm's law: I = V/R.","I = 12/6"],answer:"2 A"},questions:["State Ohm's law.","Why is an ammeter connected in series?","Calculate the power when 2 A flows through a 5 Ω resistor."]},
+ {id:"s12",subject:"Science",name:"Magnetic Effects of Electric Current",topics:["Magnetic field lines","Right-hand thumb rule","Electric motors and generators"],formulas:["For a straight current-carrying wire, the field forms concentric circles around the wire"],notes:["A current-carrying conductor produces a magnetic field.","The right-hand thumb rule gives the direction of the magnetic field around a straight conductor.","A solenoid produces a field pattern similar to a bar magnet; an iron core can strengthen the field.","An electric motor converts electrical energy into mechanical energy.","Electromagnetic induction is the production of induced current when the magnetic flux linked with a circuit changes."],example:{q:"What happens to the magnetic field around a straight wire if current increases?",steps:["The field strength around the wire depends on the current.","Increasing current increases the magnetic field strength at a fixed distance."],answer:"The magnetic field becomes stronger."},questions:["State the right-hand thumb rule.","What is electromagnetic induction?","What energy conversion occurs in an electric motor?"]},
+ {id:"s13",subject:"Science",name:"Our Environment",topics:["Food chains","Trophic levels","Ozone and waste"],formulas:["Energy available at the next trophic level is often approximated as about 10% of the energy at the previous level"],notes:["An ecosystem includes living organisms and their physical environment.","Producers make organic food; consumers obtain energy by eating other organisms; decomposers break down dead organic matter.","A food chain shows a feeding sequence and the transfer of energy.","Only a small fraction of energy passes to the next trophic level, so food chains are usually limited in length.","Ozone in the stratosphere absorbs much harmful ultraviolet radiation; some chemicals have contributed to ozone depletion."],example:{q:"Why are food chains usually short?",steps:["Organisms use much of the energy they obtain for life processes.","Only a small fraction is transferred to the next trophic level."],answer:"Energy decreases at successive trophic levels."},questions:["What is a trophic level?","What role do decomposers play?","Why is the ozone layer important?"]},
+ {id:"s14",subject:"Science",name:"Periodic Classification of Elements",topics:["Groups and periods","Periodic trends","Valency"],formulas:["Modern periodic law: properties of elements are periodic functions of their atomic numbers"],notes:["The modern periodic table arranges elements in increasing atomic number.","Vertical columns are groups; horizontal rows are periods.","Elements in the same group often have similar outer-electron arrangements and related chemical properties.","Across a period, atomic size generally decreases; down a group, atomic size generally increases.","Always use the periodic trends as general patterns and consider exceptions when relevant."],example:{q:"Why do elements in the same group often have similar chemical properties?",steps:["They generally have the same number of valence electrons.","Valence electrons strongly influence chemical bonding and reactivity."],answer:"Their outer-electron arrangements are similar."},questions:["State the modern periodic law.","What is a group in the periodic table?","How does atomic size generally change down a group?"]}
 ];
 
-const mathsNames = [
-"Real Numbers","Polynomials","Pair of Linear Equations in Two Variables",
-"Quadratic Equations","Arithmetic Progressions","Triangles","Coordinate Geometry",
-"Introduction to Trigonometry","Applications of Trigonometry","Circles",
-"Areas Related to Circles","Surface Areas and Volumes","Statistics","Probability"
-];
-
-const scienceNames = [
-"Chemical Reactions and Equations","Acids, Bases and Salts","Metals and Non-metals",
-"Carbon and Its Compounds","Periodic Classification of Elements","Life Processes",
-"Control and Coordination","How Do Organisms Reproduce?","Heredity",
-"Light: Reflection and Refraction","The Human Eye and the Colourful World",
-"Electricity","Magnetic Effects of Electric Current","Our Environment"
-];
+const chapterMap = Object.fromEntries(chapters.map(c=>[c.id,c]));
+let currentChapterId = null;
+let completed = new Set(JSON.parse(localStorage.getItem("studyhubCompleted") || "[]"));
 
 /* ---------------- NAVIGATION ---------------- */
 
-const pages = document.querySelectorAll(".page");
-const navButtons = document.querySelectorAll("[data-page]");
-let currentChapter = null;
-
-function showPage(id) {
-  if (!document.getElementById(id)) return;
-
-  pages.forEach(page => page.classList.toggle("active", page.id === id));
-  document.querySelectorAll("nav [data-page]").forEach(button => {
-    button.classList.toggle("active", button.dataset.page === id);
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  const target=document.getElementById(id);
+  if(!target)return;
+  target.classList.add("active");
+  document.querySelectorAll(".navlinks button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.page===id || (id==="lesson"&&b.dataset.page==="learn"));
   });
-
-  if (id !== "practice") clearQuizTimer();
-  if (id === "subjects") renderChapterList();
-  if (id === "practice") renderQuiz();
-  if (id === "planner") renderPlanner();
-
+  document.getElementById("navlinks").classList.remove("open");
+  document.getElementById("menuToggle").setAttribute("aria-expanded","false");
+  if(id==="learn")renderChapters();
+  if(id==="practice" && !quizStarted)startQuiz();
+  updateProgress();
   window.scrollTo({top:0,behavior:"smooth"});
 }
-
-navButtons.forEach(button => {
-  button.addEventListener("click", event => {
-    event.preventDefault();
-    showPage(button.dataset.page);
-  });
-});
-
-document.querySelectorAll("[data-subject]").forEach(button => {
-  button.addEventListener("click", () => {
-    showPage("subjects");
-    renderChapterList(button.dataset.subject);
-  });
-});
-
-/* ---------------- CHAPTER LIST AND LESSONS ---------------- */
-
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[character]);
+function toggleMenu(){
+  const links=document.getElementById("navlinks");
+  links.classList.toggle("open");
+  document.getElementById("menuToggle").setAttribute("aria-expanded",links.classList.contains("open")?"true":"false");
+}
+function openSubject(subject){
+  showPage("learn");
+  document.getElementById("subjectFilter").value=subject;
+  renderChapters();
+}
+function toast(message){
+  const el=document.getElementById("toast");
+  el.textContent=message;el.classList.remove("hidden");
+  clearTimeout(toast.timer);
+  toast.timer=setTimeout(()=>el.classList.add("hidden"),2600);
 }
 
-function getChapter(subject, name) {
-  return chapters.find(chapter => chapter.subject === subject && chapter.name === name);
+/* ---------------- LEARNING CONTENT ---------------- */
+
+function renderChapters(){
+  const query=(document.getElementById("chapterSearch").value||"").toLowerCase().trim();
+  const subject=document.getElementById("subjectFilter").value;
+  const results=chapters.filter(c=>(subject==="All"||c.subject===subject) &&
+    (c.name.toLowerCase().includes(query)||c.topics.join(" ").toLowerCase().includes(query)));
+  const host=document.getElementById("chapterResults");
+  if(!results.length){
+    host.innerHTML='<div class="card"><h3>No matching chapters</h3><p>Try a different search term.</p></div>';return;
+  }
+  host.innerHTML=results.map(c=>`
+    <button class="chapter-button" onclick="openLesson('${c.id}')">
+      <span><strong>${escapeHTML(c.name)}</strong><small>${c.subject==="Maths"?"Mathematics":"Science"} · ${escapeHTML(c.topics.slice(0,2).join(" • "))}</small></span>
+      <span class="checkmark">${completed.has(c.id)?"✓":"→"}</span>
+    </button>`).join("");
 }
-
-function renderChapterList(subjectFilter = "All") {
-  const search = (document.getElementById("chapter-search")?.value || "").trim().toLowerCase();
-  const container = document.getElementById("chapter-results");
-
-  const subjects = subjectFilter === "All" ? ["Maths","Science"] : [subjectFilter];
-  let html = "";
-
-  subjects.forEach(subject => {
-    const names = subject === "Maths" ? mathsNames : scienceNames;
-    const filtered = names.filter(name => name.toLowerCase().includes(search));
-
-    html += `<div class="section-head"><div><h2>${subject === "Maths" ? "📐 Mathematics" : "🔬 Science"}</h2><p class="muted">${filtered.length} chapter(s) shown</p></div></div>`;
-
-    if (!filtered.length) {
-      html += `<div class="card"><p>No matching chapters. Try another search.</p></div>`;
-      return;
-    }
-
-    html += `<div class="chapter-list">`;
-    filtered.forEach((name,index) => {
-      const done = isDone(subject,name);
-      html += `<div class="chapter-item">
-        <div><strong>${index+1}. ${escapeHTML(name)}</strong>
-        <small>${done ? "✓ Completed" : "Notes, examples and revision"}</small></div>
-        <button class="btn ${done ? "light" : ""}" data-open-lesson="${escapeHTML(subject)}" data-chapter="${escapeHTML(name)}">Open</button>
-      </div>`;
-    });
-    html += `</div>`;
-  });
-
-  container.innerHTML = html;
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
-
-document.getElementById("chapter-search").addEventListener("input", () => renderChapterList());
-
-document.getElementById("chapter-results").addEventListener("click", event => {
-  const button = event.target.closest("[data-open-lesson]");
-  if (button) openLesson(button.dataset.openLesson,button.dataset.chapter);
-});
-
-function openLesson(subject,name) {
-  currentChapter = {subject,name};
-  const data = getChapter(subject,name);
-
-  document.getElementById("lesson-title").textContent = name;
-  document.getElementById("lesson-subject").textContent = subject === "Maths" ? "MATHEMATICS" : "SCIENCE";
-
-  const notes = data ? data.notes : [
-    `Study the chapter ${name} from your current NCERT textbook.`,
-    "Write down the important definitions, diagrams, processes and key ideas.",
-    "After reading a section, close the book and explain the main idea in your own words."
-  ];
-  const formulas = data ? data.formulas : [
-    "This chapter may focus more on concepts, definitions, diagrams or processes than on numerical formulas.",
-    "Make a one-page revision sheet using the definitions, rules, equations and labelled diagrams from your textbook."
-  ];
-  const example = data ? data.example :
-    `Choose one solved example or activity from the NCERT chapter "${name}". Write the given information, method, answer and reason for each step.`;
-  const revision = data ? data.revision : [
-    `Write the key definition or principle from ${name}.`,
-    `Explain one important process, rule or concept from ${name}.`,
-    `Solve one NCERT in-text or exercise question from ${name}.`
-  ];
-
-  document.getElementById("notes-content").innerHTML =
-    "<ul>" + notes.map(note => `<li>${escapeHTML(note)}</li>`).join("") + "</ul>";
-
-  document.getElementById("formulas-content").innerHTML =
-    formulas.map(item => `<div class="formula">${escapeHTML(item)}</div>`).join("");
-
-  document.getElementById("example-content").innerHTML =
-    `<div class="example">${escapeHTML(example)}</div>`;
-
-  document.getElementById("revision-content").innerHTML =
-    revision.map(question => `<li>${escapeHTML(question)}</li>`).join("");
-
-  const done = isDone(subject,name);
-  document.getElementById("mark-done").textContent = done ? "✓ Completed — Mark again" : "Mark as completed";
-  document.getElementById("lesson-done-label").textContent = done ? "This chapter is marked complete." : "Not marked complete yet.";
-  document.getElementById("lesson-progress").style.width = done ? "100%" : "0%";
-
+function openLesson(id){
+  const c=chapterMap[id];if(!c)return;
+  currentChapterId=id;
+  const host=document.getElementById("lessonContent");
+  host.innerHTML=`
+    <div class="lesson-title">
+      <span class="eyebrow">${c.subject==="Maths"?"MATHEMATICS":"SCIENCE"} · CLASS 10</span>
+      <h1>${escapeHTML(c.name)}</h1>
+      <p>Read the key ideas, study the formula sheet, follow the worked example and test yourself.</p>
+    </div>
+    <div class="card lesson-block">
+      <h2>📌 Key concepts and notes</h2>
+      <ul>${c.notes.map(n=>`<li>${escapeHTML(n)}</li>`).join("")}</ul>
+    </div>
+    <div class="card lesson-block">
+      <h2>📐 Important formulas / facts</h2>
+      ${c.formulas.map(f=>`<div class="formula">${escapeHTML(f)}</div>`).join("")}
+      <p class="small">Understand what each symbol means and the conditions under which a formula applies. Follow your current textbook for the full syllabus.</p>
+    </div>
+    <div class="card lesson-block">
+      <h2>✍️ Worked example</h2>
+      <div class="example"><strong>Question:</strong> ${escapeHTML(c.example.q)}
+      <ol>${c.example.steps.map(s=>`<li>${escapeHTML(s)}</li>`).join("")}</ol>
+      <p class="answer">Answer: ${escapeHTML(c.example.answer)}</p></div>
+    </div>
+    <div class="card lesson-block">
+      <h2>🧠 Revision questions</h2>
+      <p>Attempt each question before revealing a hint or checking your textbook.</p>
+      ${c.questions.map((q,i)=>`<details class="revision-q"><summary>${i+1}. ${escapeHTML(q)}</summary><p>Try explaining the concept in your own words. Review the key concepts and relevant NCERT examples, then write a complete answer in your notebook.</p></details>`).join("")}
+    </div>
+    <div class="card lesson-block">
+      <h2>✅ Quick revision checklist</h2>
+      ${["I can explain the main ideas without reading.","I can recall the important formulas or facts.","I can solve a similar example independently.","I attempted the revision questions."].map((t,i)=>`<label class="planner-row"><input type="checkbox" class="lesson-check" data-index="${i}"><span>${t}</span></label>`).join("")}
+      <button class="btn" onclick="markCurrentDone()">Mark chapter completed</button>
+    </div>`;
+  document.getElementById("markCompleteTop").textContent=completed.has(id)?"✓ Completed — click to undo":"✓ Mark as completed";
+  document.getElementById("lessonProgressText").textContent=completed.has(id)?"This chapter is marked complete.":"Complete the checklist and practise to strengthen your understanding.";
+  document.getElementById("lessonProgressBar").style.width=completed.has(id)?"100%":"0%";
   showPage("lesson");
 }
-
-document.getElementById("mark-done").addEventListener("click", () => {
-  if (!currentChapter) return;
-  setDone(currentChapter.subject,currentChapter.name);
-  openLesson(currentChapter.subject,currentChapter.name);
-});
-
-document.getElementById("lesson").addEventListener("click", event => {
-  const button = event.target.closest("[data-page]");
-  if (button) showPage(button.dataset.page);
-});
-
-/* ---------------- LOCAL PROGRESS ---------------- */
-
-function readJSON(key,fallback) {
-  try {
-    const value = JSON.parse(localStorage.getItem(key));
-    return value ?? fallback;
-  } catch {
-    return fallback;
+function markCurrentDone(){
+  if(!currentChapterId)return;
+  if(completed.has(currentChapterId)){
+    completed.delete(currentChapterId);toast("Chapter marked incomplete.");
+  }else{
+    completed.add(currentChapterId);toast("Chapter marked complete. Well done!");
   }
-}
-
-function getDoneList() {
-  const list = readJSON("studyhub-completed-v2",[]);
-  return Array.isArray(list) ? list : [];
-}
-
-function isDone(subject,name) {
-  return getDoneList().includes(subject + "::" + name);
-}
-
-function setDone(subject,name) {
-  const key = subject + "::" + name;
-  const list = getDoneList();
-  if (!list.includes(key)) list.push(key);
-  localStorage.setItem("studyhub-completed-v2",JSON.stringify(list));
+  localStorage.setItem("studyhubCompleted",JSON.stringify([...completed]));
+  document.getElementById("markCompleteTop").textContent=completed.has(currentChapterId)?"✓ Completed — click to undo":"✓ Mark as completed";
+  document.getElementById("lessonProgressText").textContent=completed.has(currentChapterId)?"This chapter is marked complete.":"Complete the checklist and practise to strengthen your understanding.";
+  document.getElementById("lessonProgressBar").style.width=completed.has(currentChapterId)?"100%":"0%";
   updateProgress();
 }
-
-function updateProgress() {
-  const total = mathsNames.length + scienceNames.length;
-  const count = getDoneList().length;
-  const percent = Math.min(100,Math.round(count/total*100));
-  document.getElementById("progress-count").textContent = `${Math.min(count,total)} of ${total}`;
-  document.getElementById("home-progress").style.width = percent + "%";
+function updateProgress(){
+  const pct=Math.round(completed.size/chapters.length*100);
+  const el=document.getElementById("homeProgress");if(el)el.textContent=pct+"%";
 }
 
-updateProgress();
+/* ---------------- QUIZ SYSTEM ----------------
+   Questions come from three sources:
+   1. A Science/concept bank.
+   2. A large bank of chapter-based questions.
+   3. Randomly generated Maths questions with changing values.
+   No fixed six-question quiz is reused as a whole.
+*/
 
-/* ---------------- QUIZ QUESTION BANK ----------------
-   Each question has its own answer and explanation.
-   A new random sample is selected for each attempt.
------------------------------------------------------ */
-
-const quizPool = [
- {id:"m1",s:"Maths",q:"Find the HCF of 26 and 91.",o:["7","13","26","91"],a:1,e:"91 = 26 × 3 + 13, and 26 = 13 × 2. The HCF is 13."},
- {id:"m2",s:"Maths",q:"The zeroes of x² − 5x + 6 are:",o:["1 and 6","−2 and −3","2 and 3","−2 and 3"],a:2,e:"x² − 5x + 6 = (x − 2)(x − 3), so the zeroes are 2 and 3."},
- {id:"m3",s:"Maths",q:"What is the sum of the zeroes of 2x² − 7x + 3?",o:["−7/2","7/2","3/2","−3/2"],a:1,e"For ax² + bx + c, sum of zeroes = −b/a. Here it is 7/2."},
- {id:"m4",s:"Maths",q:"Solve x + y = 7 and x − y = 1.",o:["x = 3, y = 4","x = 4, y = 3","x = 7, y = 1","x = 1, y = 6"],a:1,e:"Adding the equations gives 2x = 8, so x = 4. Then y = 3."},
- {id:"m5",s:"Maths",q:"What is the discriminant of x² − 6x + 9 = 0?",o:["0","9","36","−9"],a:0,e"D = b² − 4ac = 36 − 36 = 0, so the roots are equal."},
- {id:"m6",s:"Maths",q:"Find the 10th term of the AP 3, 7, 11, 15, ...",o:["35","36","39","43"],a:2,e"a = 3, d = 4. a₁₀ = a + 9d = 3 + 36 = 39."},
- {id:"m7",s:"Maths",q:"If two similar triangles have corresponding side ratio 2:3, what is their area ratio?",o:["2:3","4:9","8:27","3:2"],a:1,e"The ratio of areas of similar triangles is the square of the side ratio: 2²:3² = 4:9."},
- {id:"m8",s:"Maths",q:"Find the distance between (1, 2) and (4, 6).",o:["4 units","5 units","6 units","7 units"],a:1,e"Distance = √[(4−1)² + (6−2)²] = √(9 + 16) = 5."},
- {id:"m9",s:"Maths",q:"What is sin 30°?",o:["0","1/2","√3/2","1"],a:1,e"sin 30° = 1/2, a standard trigonometric value."},
- {id:"m10",s:"Maths",q:"If tan θ = 3/4 for an acute angle, what is sin θ?",o:["3/5","4/5","5/3","4/3"],a:0,e"Take perpendicular = 3 and base = 4. The hypotenuse is 5, so sin θ = 3/5."},
- {id:"m11",s:"Maths",q:"A tangent to a circle is perpendicular to which line at the point of contact?",o:["A chord through the centre only","The radius","The diameter at every point","Another tangent"],a:1,e"The radius drawn to the point of contact is perpendicular to the tangent."},
- {id:"m12",s:"Maths",q:"What is the area of a circle with radius 7 cm? Use π = 22/7.",o:["44 cm²","77 cm²","154 cm²","308 cm²"],a:2,e"Area = πr² = (22/7) × 49 = 154 cm²."},
- {id:"m13",s:"Maths",q:"What is the volume of a cylinder with radius 3 cm and height 5 cm?",o:["15π cm³","30π cm³","45π cm³","90π cm³"],a:2,e"Volume = πr²h = π × 9 × 5 = 45π cm³."},
- {id:"m14",s:"Maths",q:"Find the mean of 2, 4, 6 and 8.",o:["4","5","6","20"],a:1,e"Mean = (2 + 4 + 6 + 8)/4 = 20/4 = 5."},
- {id:"m15",s:"Maths",q:"What is the probability of getting an even number on a fair six-sided die?",o:["1/6","1/3","1/2","2/3"],a:2,e"Even outcomes are 2, 4 and 6. Probability = 3/6 = 1/2."},
- {id:"m16",s:"Maths",q:"If the circumference of a circle is 2πr, what is its area?",o:["2πr","πr²","πd","r²/π"],a:1,e"The area of a circle is πr²."},
- {id:"m17",s:"Maths",q:"For x² + 4x + 4 = 0, the roots are:",o:["Two distinct real roots","Equal real roots","No real roots","One positive and one negative root"],a:1,e"The discriminant is 16 − 16 = 0, so the roots are equal."},
- {id:"m18",s:"Maths",q:"The midpoint of (2, 4) and (8, 10) is:",o:["(5, 7)","(6, 7)","(4, 6)","(10, 14)"],a:0,e"Midpoint = ((2+8)/2, (4+10)/2) = (5, 7)."},
-
- {id:"s1",s:"Science",q:"Which equation is balanced?",o:["H₂ + O₂ → H₂O","2H₂ + O₂ → 2H₂O","H₂ + 2O₂ → H₂O","2H₂ + 2O₂ → H₂O"],a:1,e"Both sides have four hydrogen atoms and two oxygen atoms."},
- {id:"s2",s:"Science",q:"A solution with pH 3 is:",o:["Acidic","Neutral","Basic","Always a salt"],a:0,e"A pH below 7 indicates an acidic solution at about 25°C."},
- {id:"s3",s:"Science",q:"What is the chemical formula of baking soda?",o:["Na₂CO₃","NaHCO₃","CaCO₃","NaOH"],a:1,e"Baking soda is sodium hydrogen carbonate, NaHCO₃."},
- {id:"s4",s:"Science",q:"Which non-metal conducts electricity?",o:["Sulphur","Phosphorus","Graphite","Oxygen"],a:2,e"Graphite has delocalised electrons that allow it to conduct electricity."},
- {id:"s5",s:"Science",q:"Which gas is used by green plants during photosynthesis?",o:["Oxygen","Carbon dioxide","Hydrogen","Nitrogen only"],a:1,e"Plants use carbon dioxide and water to produce carbohydrates during photosynthesis."},
- {id:"s6",s:"Science",q:"Which organ filters blood to form urine?",o:["Heart","Lungs","Kidneys","Stomach"],a:2,e"The kidneys filter blood; nephrons are their functional units."},
- {id:"s7",s:"Science",q:"Which hormone helps regulate blood glucose?",o:["Insulin","Adrenaline","Auxin","Thyroxine only"],a:0,e"Insulin, produced by the pancreas, helps lower blood glucose."},
- {id:"s8",s:"Science",q:"Which lens is used to correct myopia?",o:["Convex lens","Concave lens","Plane glass","Cylindrical mirror"],a:1,e"A concave, diverging lens helps focus distant-object images on the retina in myopia."},
- {id:"s9",s:"Science",q:"The SI unit of electric current is:",o:["Volt","Ohm","Ampere","Watt"],a:2,e"Electric current is measured in amperes (A)."},
- {id:"s10",s:"Science",q:"A 6 Ω resistor is connected to a 12 V supply. What current flows?",o:["0.5 A","2 A","6 A","72 A"],a:1,e"Using I = V/R, current = 12/6 = 2 A."},
- {id:"s11",s:"Science",q:"Why is an ammeter connected in series?",o:["It has very high resistance","It has very low resistance and measures circuit current","It stores charge","It measures only voltage"],a:1,e"An ammeter has very low resistance so it can measure the current without significantly changing it."},
- {id:"s12",s:"Science",q:"What is the function of a fuse?",o:["Increase the supply voltage","Protect a circuit from excessive current","Store electrical energy","Reverse current direction"],a:1,e"A fuse melts when excessive current flows, breaking the circuit."},
- {id:"s13",s:"Science",q:"What is the basic function of a decomposer in an ecosystem?",o:["Make sunlight","Break down dead organic matter","Stop all food chains","Produce metal ions"],a:1,e"Decomposers break down dead matter and help return nutrients to the environment."},
- {id:"s14",s:"Science",q:"What is the modern periodic table arranged by?",o:["Increasing atomic mass only","Increasing atomic number","Alphabetical order","Number of neutrons only"],a:1,e"The modern periodic table is arranged in increasing atomic number."},
- {id:"s15",s:"Science",q:"Which process forms a new substance when an acid reacts with a base?",o:["Neutralisation","Sublimation","Filtration","Distillation only"],a:0,e"Neutralisation commonly produces salt and water when an acid reacts with a base."},
- {id:"s16",s:"Science",q:"Which type of bond forms when atoms share electron pairs?",o:["Ionic bond","Covalent bond","Magnetic field","Gravitational bond"],a:1,e"Covalent bonds form when atoms share electron pairs."},
- {id:"s17",s:"Science",q:"What is the energy conversion in an electric motor?",o:["Mechanical to electrical","Electrical to mechanical","Chemical to nuclear","Light to sound only"],a:1,e"An electric motor converts electrical energy into mechanical energy."},
- {id:"s18",s:"Science",q:"Which part of the eye contains light-sensitive cells?",o:["Retina","Iris only","Cornea only","Optic nerve only"],a:0,e"The retina contains photoreceptor cells that respond to light."}
+const scienceQuizBank=[
+ {subject:"Science",q:"Which gas is generally released when a reactive metal reacts with dilute hydrochloric acid?",options:["Oxygen","Hydrogen","Nitrogen","Carbon dioxide"],answer:1,why:"Reactive metals can displace hydrogen from dilute acids, forming a salt and hydrogen gas."},
+ {subject:"Science",q:"What is the SI unit of electric current?",options:["Volt","Ohm","Ampere","Watt"],answer:2,why:"Electric current is measured in amperes (A)."},
+ {subject:"Science",q:"Which lens is generally used to correct myopia?",options:["Convex","Concave","Cylindrical only","Plane glass"],answer:1,why:"A concave lens diverges incoming light so distant objects can be focused on the retina."},
+ {subject:"Science",q:"What is the functional unit of the kidney?",options:["Neuron","Nephron","Alveolus","Villus"],answer:1,why:"Nephrons filter blood and help regulate water and dissolved substances."},
+ {subject:"Science",q:"Which gas do green plants use during photosynthesis?",options:["Oxygen","Hydrogen","Carbon dioxide","Nitrogen only"],answer:2,why:"Plants use carbon dioxide and water to make carbohydrates using light energy."},
+ {subject:"Science",q:"A solution with pH 3 is generally:",options:["Acidic","Neutral","Basic","Always pure water"],answer:0,why:"At 25°C, pH below 7 indicates an acidic solution."},
+ {subject:"Science",q:"Which particle is transferred when ionic bonds form?",options:["Neutrons","Electrons","Whole nuclei","Protons between nuclei"],answer:1,why:"Ionic bonding involves electron transfer and attraction between oppositely charged ions."},
+ {subject:"Science",q:"What is the main role of decomposers in an ecosystem?",options:["Produce sunlight","Break down dead organic matter","Stop all energy transfer","Make rocks"],answer:1,why:"Decomposers break down dead matter and help recycle nutrients."},
+ {subject:"Science",q:"Which of these is a plant hormone?",options:["Auxin","Haemoglobin","Insulin only","Pepsin"],answer:0,why:"Auxin is a plant hormone involved in growth responses."},
+ {subject:"Science",q:"What does a balanced chemical equation obey?",options:["Conservation of mass","Creation of atoms","Loss of every reactant atom","Conservation of colour"],answer:0,why:"A balanced equation has equal numbers of each type of atom on both sides, reflecting conservation of mass."},
+ {subject:"Science",q:"Which component of blood transports oxygen using haemoglobin?",options:["Red blood cells","Platelets","Plasma alone","White blood cells"],answer:0,why:"Red blood cells contain haemoglobin, which binds and transports oxygen."},
+ {subject:"Science",q:"Which instrument measures potential difference?",options:["Ammeter","Voltmeter","Thermometer","Barometer"],answer:1,why:"A voltmeter measures potential difference and is connected in parallel."},
+ {subject:"Science",q:"What is the SI unit of resistance?",options:["Ampere","Volt","Ohm","Joule"],answer:2,why:"Electrical resistance is measured in ohms (Ω)."},
+ {subject:"Science",q:"Which process transfers pollen from anther to stigma?",options:["Fertilisation","Pollination","Germination","Respiration"],answer:1,why:"Pollination is the transfer of pollen from anther to stigma."},
+ {subject:"Science",q:"Which structure controls the opening and closing of stomata?",options:["Guard cells","Red blood cells","Nephrons","Alveoli"],answer:0,why:"Guard cells change shape to regulate the stomatal opening."},
+ {subject:"Science",q:"What is the approximate pH of a neutral solution at 25°C?",options:["1","5","7","14"],answer:2,why:"A neutral aqueous solution has pH 7 at 25°C."},
+ {subject:"Science",q:"Which type of reproduction usually produces genetically similar offspring from one parent?",options:["Sexual reproduction","Asexual reproduction","Cross-pollination only","Fertilisation"],answer:1,why:"Asexual reproduction generally involves one parent without fusion of gametes."},
+ {subject:"Science",q:"What happens to current through an ohmic resistor if voltage doubles while resistance stays constant?",options:["It halves","It doubles","It becomes zero","It stays the same"],answer:1,why:"Ohm's law gives I = V/R, so doubling V at constant R doubles I."},
+ {subject:"Science",q:"Which part of the eye controls the amount of light entering?",options:["Iris","Retina only","Optic nerve","Cornea alone"],answer:0,why:"The iris adjusts pupil size and thereby controls how much light enters."},
+ {subject:"Science",q:"Which material is commonly used as an electrical conductor?",options:["Rubber","Dry wood","Copper","Plastic"],answer:2,why:"Copper has low resistivity and is widely used in electrical wiring."},
+ {subject:"Science",q:"What is the name of the process in which a liquid changes into vapour below its boiling point?",options:["Condensation","Evaporation","Freezing","Sublimation only"],answer:1,why:"Evaporation occurs at the surface of a liquid below its boiling point."},
+ {subject:"Science",q:"Which organ pumps blood through the human circulatory system?",options:["Liver","Heart","Kidney","Lung"],answer:1,why:"The heart pumps blood through pulmonary and systemic circulation."},
+ {subject:"Science",q:"What is the genetic material in most living organisms?",options:["DNA","Starch","Water","Cellulose"],answer:0,why:"DNA stores hereditary information in most organisms."},
+ {subject:"Science",q:"Which colour of visible light has the longest wavelength?",options:["Violet","Blue","Green","Red"],answer:3,why:"Red light has a longer wavelength than violet light in the visible spectrum."},
+ {subject:"Science",q:"Which rule gives the direction of the magnetic field around a straight current-carrying wire?",options:["Right-hand thumb rule","Law of reflection","Pythagoras theorem","Snell's law"],answer:0,why:"The right-hand thumb rule relates thumb direction (current) to curled fingers (magnetic field)."},
+ {subject:"Science",q:"What does an electric motor convert?",options:["Mechanical energy into chemical energy only","Electrical energy into mechanical energy","Sound into mass","Light into charge only"],answer:1,why:"An electric motor uses electrical energy to produce mechanical motion."},
+ {subject:"Science",q:"Which compound is commonly called baking soda?",options:["NaCl","NaHCO₃","Na₂CO₃·10H₂O","CaCO₃"],answer:1,why:"Baking soda is sodium hydrogen carbonate, NaHCO₃."},
+ {subject:"Science",q:"Which of the following is a fossil fuel?",options:["Coal","Wind","Sunlight","Tidal energy"],answer:0,why:"Coal is a fossil fuel formed from ancient organic matter."},
+ {subject:"Science",q:"In a food chain, which organisms usually occupy the first trophic level?",options:["Top carnivores","Producers","Decomposers only","Parasites"],answer:1,why:"Producers capture energy, usually from sunlight, and form the base of food chains."},
+ {subject:"Science",q:"Which kind of bond involves sharing electron pairs?",options:["Covalent bond","Ionic bond only","Gravitational bond","Magnetic pole"],answer:0,why:"Covalent bonds form when atoms share electron pairs."}
 ];
 
-let activeQuiz = [];
-let previousQuizIds = [];
-let quizTimer = null;
-let quizAttempt = 0;
+function rnd(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}
+  return a;
+}
+function mcq(subject,q,options,answer,why){return {subject,q,options,answer,why}}
 
-function clearQuizTimer() {
-  if (quizTimer !== null) {
-    clearTimeout(quizTimer);
-    quizTimer = null;
+function makeArithmeticQuestion(){
+  const a=rnd(12,85),b=rnd(2,12),kind=rnd(0,3);
+  if(kind===0){
+    const ans=a+b,wrong=new Set([ans+rnd(1,5),ans-rnd(1,5),ans+rnd(6,12)]);
+    return mcq("Maths",`Calculate ${a} + ${b}.`,shuffle([ans,...wrong]).map(String),null,`Add the two numbers: ${a} + ${b} = ${ans}.`).withAnswer(ans);
   }
-}
-
-function shuffled(items) {
-  const copy = items.slice();
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i],copy[j]] = [copy[j],copy[i]];
+  if(kind===1){
+    const ans=a*b,wrong=new Set([ans+b,ans-b,ans+b*2]);
+    return mcq("Maths",`Calculate ${a} × ${b}.`,shuffle([ans,...wrong]).map(String),null,`${a} × ${b} = ${ans}.`).withAnswer(ans);
   }
-  return copy;
-}
-
-function selectQuestions() {
-  const subject = document.getElementById("quiz-subject").value;
-  let pool = quizPool.filter(question => subject === "All" || question.s === subject);
-
-  if (pool.length < 6) pool = quizPool.slice();
-
-  let selected = shuffled(pool).slice(0,6);
-
-  // Avoid repeating the exact same six-question set consecutively.
-  if (pool.length > 6) {
-    let tries = 0;
-    while (
-      selected.map(q => q.id).sort().join("|") === previousQuizIds.slice().sort().join("|")
-      && tries < 15
-    ) {
-      selected = shuffled(pool).slice(0,6);
-      tries++;
-    }
+  if(kind===2){
+    const n=rnd(3,20),d=rnd(2,9),first=n*d;
+    const ans=first/d;
+    return mcq("Maths",`Evaluate ${first} ÷ ${d}.`,shuffle([ans,ans+1,ans+2,Math.max(1,ans-1)]).map(String),null,`${first} ÷ ${d} = ${ans}.`).withAnswer(ans);
   }
-
-  previousQuizIds = selected.map(q => q.id);
-  return selected;
+  const x=rnd(2,12),c=rnd(1,12),y=2*x+c;
+  return mcq("Maths",`If 2x + ${c} = ${y}, what is x?`,shuffle([x,x+1,Math.max(0,x-1),x+2]).map(String),null,`Subtract ${c} from both sides: 2x = ${y-c}. Divide by 2, so x = ${x}.`).withAnswer(x);
 }
-
-function renderQuiz() {
-  clearQuizTimer();
-  quizAttempt++;
-  activeQuiz = selectQuestions();
-
-  const form = document.getElementById("quiz-form");
-  const questionsContainer = document.getElementById("quiz-questions");
-  const result = document.getElementById("quiz-result");
-
-  result.classList.add("hidden");
-  result.innerHTML = "";
-  document.getElementById("submit-quiz").disabled = false;
-
-  questionsContainer.innerHTML = activeQuiz.map((question,index) => `
-    <fieldset class="quiz-question" id="question-${index}">
-      <legend>${index+1}. ${escapeHTML(question.q)}</legend>
-      ${question.o.map((option,optionIndex) => `
-        <label class="quiz-option">
-          <input type="radio" name="answer-${index}" value="${optionIndex}" required>
-          <span>${String.fromCharCode(65+optionIndex)}. ${escapeHTML(option)}</span>
-        </label>
-      `).join("")}
-      <div class="quiz-feedback hidden" id="feedback-${index}"></div>
-    </fieldset>
-  `).join("");
-
-  form.dataset.attempt = String(quizAttempt);
-  document.getElementById("new-quiz-top").textContent = "New Quiz";
-  document.getElementById("new-quiz-bottom").textContent = "Try Another Quiz";
-}
-
-document.getElementById("quiz-form").addEventListener("submit",event => {
-  event.preventDefault();
-
-  const form = event.currentTarget;
-  const submittedAttempt = Number(form.dataset.attempt);
-  if (submittedAttempt !== quizAttempt) return;
-
-  clearQuizTimer();
-
-  let score = 0;
-
-  activeQuiz.forEach((question,index) => {
-    const chosen = form.querySelector(`input[name="answer-${index}"]:checked`);
-    const chosenIndex = chosen ? Number(chosen.value) : -1;
-    const isCorrect = chosenIndex === question.a;
-
-    if (isCorrect) score++;
-
-    const feedback = document.getElementById(`feedback-${index}`);
-    feedback.classList.remove("hidden");
-    feedback.classList.add(isCorrect ? "correct" : "incorrect");
-
-    const answerText = question.o[question.a];
-    feedback.innerHTML = `
-      <strong>${isCorrect ? "Correct!" : "Not quite."}</strong>
-      ${!isCorrect ? ` Correct answer: <strong>${escapeHTML(answerText)}</strong>.` : ""}
-      <br>${escapeHTML(question.e)}
-    `;
-
-    form.querySelectorAll(`input[name="answer-${index}"]`).forEach(input => {
-      input.disabled = true;
-    });
-  });
-
-  document.getElementById("submit-quiz").disabled = true;
-
-  const percent = Math.round(score / activeQuiz.length * 100);
-  const result = document.getElementById("quiz-result");
-  result.innerHTML = `
-    <h3>Quiz result</h3>
-    <p style="font-size:27px;margin:4px 0"><strong>${score} / ${activeQuiz.length}</strong></p>
-    <p>You scored ${percent}%. Review the explanations above to strengthen your understanding.</p>
-    <p id="quiz-countdown">A fresh quiz will start automatically in 8 seconds.</p>
-    <button type="button" class="btn" id="try-another-result">Try Another Quiz</button>
-  `;
-  result.classList.remove("hidden");
-
-  document.getElementById("try-another-result").addEventListener("click",renderQuiz);
-  result.scrollIntoView({behavior:"smooth",block:"start"});
-
-  // Keep the automatic refresh tied to this submitted attempt.
-  const thisAttempt = quizAttempt;
-  quizTimer = setTimeout(() => {
-    if (thisAttempt === quizAttempt && document.getElementById("practice").classList.contains("active")) {
-      renderQuiz();
-    }
-  },8000);
+Object.defineProperty(Object.prototype,"withAnswer",{
+  value:function(correctValue){
+    const correctText=String(correctValue);
+    const index=this.options.findIndex(o=>o===correctText);
+    this.answer=index>=0?index:0;
+    if(index<0)this.options[0]=correctText;
+    return this;
+  },enumerable:false,configurable:true
 });
 
-document.getElementById("new-quiz-top").addEventListener("click",renderQuiz);
-document.getElementById("new-quiz-bottom").addEventListener("click",renderQuiz);
-document.getElementById("quiz-subject").addEventListener("change",renderQuiz);
+function makePercentageQuestion(){
+  const base=rnd(2,20)*10,pick=[10,20,25,50,75][rnd(0,4)];
+  const ans=base*pick/100;
+  const opts=shuffle([...new Set([ans,ans+base/10,Math.max(0,ans-base/10),ans+base/5])]).slice(0,4);
+  while(opts.length<4)opts.push(ans+opts.length+3);
+  const options=opts.map(String);
+  return mcq("Maths",`What is ${pick}% of ${base}?`,options,options.indexOf(String(ans)),`${pick}% = ${pick}/100, so (${pick}/100) × ${base} = ${ans}.`);
+}
+function makeLinearQuestion(){
+  const x=rnd(-8,12),a=rnd(2,9),b=rnd(-10,10),rhs=a*x+b;
+  const vals=[x,x+1,x-1,x+2];
+  const options=shuffle([...new Set(vals)]).slice(0,4).map(String);
+  while(options.length<4)options.push(String(x+options.length+3));
+  const ans=options.indexOf(String(x));
+  return mcq("Maths",`Solve ${a}x ${b>=0?"+ "+b:"− "+Math.abs(b)} = ${rhs}.`,options,ans,`Move the constant to the right: ${a}x = ${rhs-b} = ${a} × ${x}. Thus x = ${x}.`);
+}
+function makeGeometryQuestion(){
+  const type=rnd(0,3);
+  if(type===0){
+    const a=rnd(2,10),b=rnd(2,10),ans=a*a+b*b;
+    const vals=shuffle([ans,ans+a,Math.abs(a*a-b*b),ans+10]);
+    const opts=[...new Set(vals)].slice(0,4).map(String);
+    while(opts.length<4)opts.push(String(ans+opts.length+20));
+    return mcq("Maths",`A right triangle has perpendicular sides ${a} and ${b}. What is its hypotenuse squared?`,opts,opts.indexOf(String(ans)),`By Pythagoras' theorem, c² = a² + b² = ${a}² + ${b}² = ${ans}.`);
+  }
+  if(type===1){
+    const r=rnd(2,10),ans=r*r;
+    const opts=shuffle([ans,ans+r,2*r,ans+2]).map(String);
+    return mcq("Maths",`What is the value of r² when r = ${r}?`,opts,opts.indexOf(String(ans)),`${r}² = ${ans}.`);
+  }
+  if(type===2){
+    const a=rnd(2,12),d=rnd(2,6),n=rnd(3,10),ans=a+(n-1)*d;
+    const vals=shuffle([ans,ans+d,ans-d,a+n*d]).map(String);
+    return mcq("Maths",`An AP has first term ${a} and common difference ${d}. Find its ${n}th term.`,vals,vals.indexOf(String(ans)),`aₙ = a + (n−1)d = ${a} + (${n}−1)×${d} = ${ans}.`);
+  }
+  const r=rnd(2,12),ans=2*r;
+  const vals=shuffle([ans,r,r*r,ans+2]).map(String);
+  return mcq("Maths",`A circle has radius ${r} cm. What is its diameter?`,vals,vals.indexOf(String(ans)),`Diameter = 2 × radius = 2 × ${r} = ${ans} cm.`);
+}
+function makeScienceFromChapter(){
+  const usable=chapters.filter(c=>c.subject==="Science");
+  const c=usable[rnd(0,usable.length-1)];
+  const question=c.questions[rnd(0,c.questions.length-1)];
+  const note=c.notes[rnd(0,c.notes.length-1)];
+  return mcq("Science",`Revision prompt — ${c.name}: ${question}`,
+    ["See the chapter notes and explain the concept","It is always zero","It is unrelated to the chapter","All options are identical"],
+    0,`Revision point: ${note}`);
+}
+function generateQuestion(subject){
+  if(subject==="Maths"){
+    const choice=rnd(0,3);
+    return choice===0?makeArithmeticQuestion():choice===1?makePercentageQuestion():choice===2?makeLinearQuestion():makeGeometryQuestion();
+  }
+  if(subject==="Science"){
+    return Math.random()<.65?{...scienceQuizBank[rnd(0,scienceQuizBank.length-1)]}:makeScienceFromChapter();
+  }
+  return Math.random()<.5?generateQuestion("Maths"):generateQuestion("Science");
+}
+let quizTimer=null;
+let activeQuiz=[];
+let quizStarted=false;
+let quizAttempt=0;
+let quizLocked=false;
+
+function clearQuizTimer(){
+  if(quizTimer){clearTimeout(quizTimer);quizTimer=null;}
+}
+function startQuiz(){
+  clearQuizTimer();
+  quizStarted=true;quizLocked=false;quizAttempt++;
+  const subject=document.getElementById("quizSubject").value;
+  activeQuiz=[];
+  const seen=new Set();
+  let tries=0;
+  while(activeQuiz.length<10 && tries<250){
+    tries++;
+    let q=generateQuestion(subject);
+    const signature=q.q+"|"+q.options.join(",");
+    if(!seen.has(signature)){seen.add(signature);activeQuiz.push(q);}
+  }
+  // This fallback ensures the quiz can still be filled if the bank contains duplicates.
+  while(activeQuiz.length<10)activeQuiz.push(generateQuestion(subject));
+  const form=document.getElementById("quizForm");
+  const result=document.getElementById("quizResult");
+  result.classList.add("hidden");result.innerHTML="";
+  document.getElementById("quizStatus").textContent=`Attempt ${quizAttempt} · ${activeQuiz.length} questions · ${subject==="All"?"Mixed subjects":subject}`;
+  form.innerHTML=activeQuiz.map((q,i)=>`
+    <fieldset class="quiz-question" id="question-${i}" style="border:1px solid var(--line)">
+      <legend style="padding:0 6px;color:var(--green);font-weight:800">Question ${i+1} · ${escapeHTML(q.subject)}</legend>
+      <h3>${escapeHTML(q.q)}</h3>
+      ${q.options.map((opt,j)=>`
+        <label class="quiz-option" id="option-${i}-${j}">
+          <input type="radio" name="answer-${i}" value="${j}" required>
+          <span>${String.fromCharCode(65+j)}. ${escapeHTML(opt)}</span>
+        </label>`).join("")}
+      <div id="why-${i}" class="explanation hidden"></div>
+    </fieldset>`).join("")+`
+      <div class="card">
+        <button class="btn" type="submit" id="submitQuiz">Submit Answers</button>
+        <button class="btn btn-outline" type="button" onclick="startQuiz()">Try Another Quiz ↻</button>
+      </div>`;
+  form.onsubmit=submitQuiz;
+}
+function submitQuiz(event){
+  event.preventDefault();
+  if(quizLocked)return;
+  quizLocked=true;clearQuizTimer();
+  let score=0,answered=0;
+  activeQuiz.forEach((q,i)=>{
+    const selected=document.querySelector(`input[name="answer-${i}"]:checked`);
+    if(selected)answered++;
+    const chosen=selected?Number(selected.value):-1;
+    if(chosen===q.answer)score++;
+    q.options.forEach((opt,j)=>{
+      const label=document.getElementById(`option-${i}-${j}`);
+      if(j===q.answer)label.classList.add("correct");
+      if(j===chosen && j!==q.answer)label.classList.add("incorrect");
+    });
+    const why=document.getElementById(`why-${i}`);
+    why.classList.remove("hidden");
+    why.innerHTML=`<strong>${chosen===q.answer?"Correct!":chosen<0?"Not answered.":"Review this answer."}</strong> Correct answer: ${escapeHTML(q.options[q.answer])}.<br>${escapeHTML(q.why)}`;
+  });
+  document.querySelectorAll("#quizForm input").forEach(input=>input.disabled=true);
+  const submit=document.getElementById("submitQuiz");if(submit)submit.disabled=true;
+  const pct=Math.round(score/activeQuiz.length*100);
+  const result=document.getElementById("quizResult");
+  result.classList.remove("hidden");
+  result.innerHTML=`
+    <span class="eyebrow">Attempt ${quizAttempt} complete</span>
+    <h2 style="font-size:32px;margin:5px 0">${score} / ${activeQuiz.length}</h2>
+    <p>You scored <strong>${pct}%</strong>. ${answered<activeQuiz.length?`You answered ${answered} of ${activeQuiz.length} questions. `:""}${pct>=80?"Strong work! Review the explanations to reinforce your knowledge.":pct>=50?"Good effort. Review the questions you missed and try again.":"Use the explanations to learn the concepts, then practise another set."}</p>
+    <div class="progress-track"><span style="width:${pct}%"></span></div>
+    <p>A fresh quiz will start automatically in 10 seconds.</p>
+    <button class="btn" type="button" onclick="startQuiz()">Try Another Quiz ↻</button>
+    <button class="btn btn-outline" type="button" onclick="showPage('learn')">Review chapters</button>`;
+  result.scrollIntoView({behavior:"smooth",block:"start"});
+  quizTimer=setTimeout(()=>{
+    if(document.getElementById("practice").classList.contains("active"))startQuiz();
+    else quizTimer=null;
+  },10000);
+}
 
 /* ---------------- STUDY PLANNER ---------------- */
 
-function getGoals() {
-  const goals = readJSON("studyhub-goals-v2",[]);
-  return Array.isArray(goals) ? goals : [];
+const GOAL_KEY="studyhubGoals";
+function getGoals(){try{return JSON.parse(localStorage.getItem(GOAL_KEY)||"[]")}catch{return []}}
+function saveGoals(goals){localStorage.setItem(GOAL_KEY,JSON.stringify(goals));renderGoals()}
+function addGoal(){
+  const input=document.getElementById("goalInput");
+  const text=input.value.trim();
+  if(!text){toast("Write a task first.");input.focus();return}
+  const goals=getGoals();
+  goals.push({id:Date.now()+"-"+Math.random().toString(36).slice(2),text,done:false});
+  saveGoals(goals);input.value="";toast("Task added.");
+}
+function toggleGoal(id,done){
+  saveGoals(getGoals().map(g=>g.id===id?{...g,done}:g));
+}
+function deleteGoal(id){saveGoals(getGoals().filter(g=>g.id!==id))}
+function clearGoals(){
+  if(confirm("Clear all study tasks?")){saveGoals([]);toast("Study tasks cleared.");}
+}
+function renderGoals(){
+  const host=document.getElementById("goalList");if(!host)return;
+  const goals=getGoals();
+  if(!goals.length){host.innerHTML='<p class="small">No tasks yet. Add one small, realistic target above.</p>';return}
+  host.innerHTML=goals.map(g=>`
+    <div class="planner-row">
+      <input type="checkbox" ${g.done?"checked":""} onchange="toggleGoal('${g.id}',this.checked)" aria-label="Mark task done">
+      <span style="${g.done?"text-decoration:line-through;color:var(--muted)":""}">${escapeHTML(g.text)}</span>
+      <button class="btn btn-outline" style="padding:5px 9px" onclick="deleteGoal('${g.id}')" aria-label="Delete task">×</button>
+    </div>`).join("");
 }
 
-function saveGoals(goals) {
-  localStorage.setItem("studyhub-goals-v2",JSON.stringify(goals));
-}
+/* ---------------- CAREER REFLECTION ---------------- */
 
-function renderPlanner() {
-  const list = document.getElementById("planner-list");
-  const goals = getGoals();
-
-  if (!goals.length) {
-    list.innerHTML = '<p class="muted">No goals yet. Add one above to begin.</p>';
-    return;
+function showCareerReflection(){
+  const interest=document.getElementById("interest").value;
+  const strength=document.getElementById("strength").value;
+  const priority=document.getElementById("priority").value;
+  const result=document.getElementById("careerResult");
+  if(!interest||!strength||!priority){
+    result.classList.remove("hidden");result.textContent="Choose an answer for all three questions to see your reflection.";return;
   }
-
-  list.innerHTML = goals.map((goal,index) => `
-    <div class="formula">
-      <label style="display:flex;gap:9px;align-items:flex-start">
-        <input type="checkbox" data-goal-done="${index}" ${goal.done ? "checked" : ""}>
-        <span style="${goal.done ? "text-decoration:line-through;opacity:.65" : ""}">
-          <strong>${escapeHTML(goal.text)}</strong><br>
-          <small>${escapeHTML(goal.time)}</small>
-        </span>
-      </label>
-      <button class="btn outline" type="button" data-delete-goal="${index}" style="margin-top:8px">Remove</button>
-    </div>
-  `).join("");
+  const fields={
+    technology:"Try a beginner coding project, website or simple app.",
+    science:"Explore experiments, science explainers and research careers.",
+    business:"Try a budget, market observation or small business case study.",
+    creative:"Create a design, animation, story or game prototype.",
+    people:"Try tutoring a topic, volunteering appropriately or creating an explainer.",
+    environment:"Explore conservation, agriculture and local environmental questions."
+  };
+  const strengths={
+    maths:"Build confidence through problem-solving and logical reasoning.",
+    science:"Practise explaining concepts, recording observations and testing ideas.",
+    writing:"Develop clear communication through writing and presentations.",
+    design:"Make small projects and collect your work in a portfolio.",
+    organising:"Practise planning, teamwork and managing a project."
+  };
+  const priorities={
+    learning:"When researching options, look at what you would learn and how you could keep developing.",
+    creativity:"Explore roles that allow original ideas, while checking their everyday responsibilities.",
+    service:"Look into roles that help people or communities and learn what training they require.",
+    stability:"Compare qualifications, job tasks, costs and opportunities using reliable information.",
+    variety:"Explore fields with varied projects and find out what their daily work is really like."
+  };
+  result.innerHTML=`<strong>Your exploration starting points</strong>
+    <p>${fields[interest]}</p><p>${strengths[strength]}</p><p>${priorities[priority]}</p>
+    <p>Next step: choose one field, learn about two real occupations in it, and discuss what you discover with a trusted adult or school counsellor. This reflection is not a prediction of your success or a fixed career recommendation.</p>`;
+  result.classList.remove("hidden");
+  result.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
-document.getElementById("planner-form").addEventListener("submit",event => {
-  event.preventDefault();
-  const input = document.getElementById("goal-input");
-  const text = input.value.trim();
-  if (!text) return;
+/* ---------------- STARTUP ---------------- */
 
-  const goals = getGoals();
-  goals.push({
-    text,
-    time:document.getElementById("goal-time").value,
-    done:false
-  });
-  saveGoals(goals);
-  input.value = "";
-  renderPlanner();
+document.addEventListener("DOMContentLoaded",()=>{
+  renderChapters();
+  renderGoals();
+  updateProgress();
+  startQuiz();
 });
-
-document.getElementById("planner-list").addEventListener("change",event => {
-  const index = event.target.dataset.goalDone;
-  if (index === undefined) return;
-
-  const goals = getGoals();
-  if (!goals[index]) return;
-  goals[index].done = event.target.checked;
-  saveGoals(goals);
-  renderPlanner();
-});
-
-document.getElementById("planner-list").addEventListener("click",event => {
-  const index = event.target.dataset.deleteGoal;
-  if (index === undefined) return;
-
-  const goals = getGoals();
-  goals.splice(Number(index),1);
-  saveGoals(goals);
-  renderPlanner();
-});
-
-document.getElementById("clear-planner").addEventListener("click",() => {
-  if (!getGoals().length) return;
-  if (confirm("Remove all study goals?")) {
-    saveGoals([]);
-    renderPlanner();
-  }
-});
-
-renderPlanner();
-renderChapterList();
 </script>
 </body>
 </html>
