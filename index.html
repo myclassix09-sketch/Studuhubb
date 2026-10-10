@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#146c52">
+<meta name="description" content="Studyhub: free Class 10 Mathematics and Science lessons, revision notes, quizzes and CBSE resources.">
+<title>Studyhub | Class 10 Learning</title>
+<style>
+:root{--green:#146c52;--dark:#103c30;--mint:#e8f6ef;--bg:#f7f9f8;--ink:#18251f;--muted:#66756d;--line:#e2e9e5;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+a{color:var(--green)}button,input{font:inherit}
+header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:1150px;margin:auto;padding:13px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900;color:var(--green);text-decoration:none;letter-spacing:-1px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav button,.btn{border:0;border-radius:10px;padding:10px 14px;background:var(--mint);color:var(--dark);font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+nav button:hover,.btn:hover{filter:brightness(.96)}
+nav .primary,.primary{background:var(--green);color:white}
+main{max-width:1150px;margin:auto;padding:28px 5% 60px}
+.hero{background:linear-gradient(120deg,#e4f5eb,#f2f8f4);border-radius:24px;padding:clamp(25px,5vw,58px);display:grid;grid-template-columns:1.4fr .8fr;gap:25px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);font-weight:800}
+h1{font-size:clamp(35px,5vw,57px);line-height:1.08;letter-spacing:-1.8px;margin:12px 0}
+h2{font-size:28px;line-height:1.2;margin:0 0 12px}
+h3{margin:0 0 8px}
+p{margin:8px 0 16px}
+.muted{color:var(--muted)}
+.hero-art{font-size:100px;text-align:center;background:white;border-radius:24px;padding:20px}
+.section{margin-top:36px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 3px 12px #163b2707}
+.card p{color:var(--muted)}
+.card .emoji{font-size:31px}
+.card button{margin-top:5px}
+.pill{display:inline-block;border-radius:30px;padding:4px 10px;background:var(--mint);color:var(--dark);font-size:12px;font-weight:bold}
+.search{width:100%;padding:13px 15px;border:1px solid #cbd9d1;border-radius:12px;background:white;margin:8px 0 18px}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:start}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}
+.chapter{display:block;width:100%;text-align:left;border:0;background:white;padding:11px;border-radius:8px;cursor:pointer;color:var(--ink)}
+.chapter:hover,.chapter.active{background:var(--mint);color:var(--dark)}
+.lesson h2{margin-top:8px}
+.note{padding:15px;border-left:4px solid var(--green);background:#edf7f1;border-radius:7px;margin:16px 0}
+.formula{background:#f2f4f3;padding:12px;border-radius:8px;font-weight:bold}
+.question{padding:17px 0;border-bottom:1px solid var(--line)}
+.option{display:block;padding:9px;margin:7px 0;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.option:has(input:checked){background:var(--mint);border-color:var(--green)}
+footer{background:var(--dark);color:white;padding:28px 5%;text-align:center}
+footer a{color:#bcebd2}
+.hidden{display:none!important}
+.small{font-size:13px}
+@media(max-width:750px){.hero{grid-template-columns:1fr}.hero-art{font-size:65px}.grid{grid-template-columns:1fr 1fr}.layout{grid-template-columns:1fr}nav{width:100%}nav button{flex:1}}
+@media(max-width:460px){.grid{grid-template-columns:1fr}main{padding-top:18px}nav button{padding:8px;font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a class="logo" href="#home" onclick="showPage('home');return false">Studyhub<span style="color:#f1ad48">.</span></a>
+  <nav aria-label="Main navigation">
+   <button onclick="showPage('home')">Home</button>
+   <button onclick="showPage('subjects')">Subjects</button>
+   <button onclick="showPage('practice')">Practice</button>
+   <button onclick="showPage('resources')">CBSE PDFs</button>
+   <button onclick="showPage('planner')" class="primary">My Study Plan</button>
+  </nav>
+ </div>
+</header>
+<main>
+<section id="home" class="page">
+ <div class="hero">
+  <div>
+   <span class="eyebrow">Your Class 10 learning space</span>
+   <h1>Learn smarter.<br>Grow every day.</h1>
+   <p class="muted">Understand concepts, revise important topics and test your knowledge — all in one place.</p>
+   <button class="btn primary" onclick="showPage('subjects')">Explore lessons →</button>
+   <a class="btn" href="https://cbseacademic.nic.in/SQP_CLASSX_2026-27.html" target="_blank" rel="noopener noreferrer">Sample papers ↗</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">📚✏️<div style="font-size:17px;color:#146c52;font-weight:bold">Small steps. Big progress.</div></div>
+ </div>
+ <div class="section">
+  <div class="section-head"><div><span class="eyebrow">Start learning</span><h2>Choose your subject</h2></div></div>
+  <div class="grid">
+   <article class="card"><div class="emoji">📐</div><h3>Mathematics</h3><p>Formulas, worked examples and chapter revision.</p><button class="btn primary" onclick="openSubject('math')">Study Maths →</button></article>
+   <article class="card"><div class="emoji">🔬</div><h3>Science</h3><p>Physics, Chemistry and Biology concepts in simple language.</p><button class="btn primary" onclick="openSubject('science')">Study Science →</button></article>
+   <article class="card"><div class="emoji">🎯</div><h3>Practice quiz</h3><p>Answer questions and check your score instantly.</p><button class="btn" onclick="showPage('practice')">Start practice →</button></article>
+  </div>
+ </div>
+ <div class="section">
+  <div class="section-head"><div><span class="eyebrow">Official resources</span><h2>Study from trusted sources</h2></div></div>
+  <div class="grid">
+   <article class="card"><h3>📘 NCERT textbooks</h3><p>Find school textbooks from NCERT.</p><a class="btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer">Open NCERT ↗</a></article>
+   <article class="card"><h3>📝 CBSE sample papers</h3><p>Practice with official sample question papers.</p><a class="btn" href="https://cbseacademic.nic.in/SQP_CLASSX_2026-27.html" target="_blank" rel="noopener noreferrer">Open papers ↗</a></article>
+   <article class="card"><h3>📅 CBSE curriculum</h3><p>Check the published Class 10 curriculum.</p><a class="btn" href="https://cbseacademic.nic.in/curriculum_2027.html" target="_blank" rel="noopener noreferrer">View curriculum ↗</a></article>
+  </div>
+ </div>
+ <div class="section card"><h2>🔎 Find a chapter</h2><p class="muted">Search the available Maths and Science chapters.</p><input id="homeSearch" class="search" placeholder="Try: Real Numbers, Light, Electricity..." oninput="searchChapters(this.value)"><div id="searchResults"></div></div>
+</section>
+
+<section id="subjects" class="page hidden">
+ <span class="eyebrow">Class 10</span><h1 style="font-size:40px">Subjects and chapters</h1>
+ <p class="muted">Choose a subject, then select a chapter to see the available revision notes.</p>
+ <div class="grid" style="margin-top:22px">
+  <article class="card"><div class="emoji">📐</div><h2>Mathematics</h2><p>Number systems, algebra, geometry, trigonometry and statistics.</p><button class="btn primary" onclick="openSubject('math')">View chapters</button></article>
+  <article class="card"><div class="emoji">🧪</div><h2>Science</h2><p>Physics, Chemistry and Biology revision topics.</p><button class="btn primary" onclick="openSubject('science')">View chapters</button></article>
+ </div>
+ <div id="subjectArea" class="section"></div>
+</section>
+
+<section id="lessonPage" class="page hidden">
+ <button class="btn" onclick="showPage('subjects')">← All subjects</button>
+ <div class="layout section">
+  <aside class="panel"><h3>Chapters</h3><div id="chapterList"></div></aside>
+  <article class="panel lesson" id="lessonContent"></article>
+ </div>
+</section>
+
+<section id="practice" class="page hidden">
+ <span class="eyebrow">Check your understanding</span><h1 style="font-size:40px">Practice quiz</h1>
+ <p class="muted">Choose an answer for each question, then check your score. Try again to improve.</p>
+ <form id="quizForm" class="panel section"></form>
+ <div id="quizResult" class="note hidden" aria-live="polite"></div>
+</section>
+
+<section id="resources" class="page hidden">
+ <span class="eyebrow">Official study links</span><h1 style="font-size:40px">CBSE and NCERT library</h1>
+ <p class="muted">These links open in a new tab. PDF availability and syllabus details depend on the official source.</p>
+ <div class="grid section">
+  <article class="card"><div class="emoji">📚</div><h3>NCERT textbooks</h3><p>Official textbook portal.</p><a class="btn primary" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener noreferrer">Open textbooks ↗</a></article>
+  <article class="card"><div class="emoji">🧾</div><h3>CBSE sample papers</h3><p>Sample papers and marking schemes for Class X.</p><a class="btn primary" href="https://cbseacademic.nic.in/SQP_CLASSX_2026-27.html" target="_blank" rel="noopener noreferrer">Open sample papers ↗</a></article>
+  <article class="card"><div class="emoji">📖</div><h3>CBSE curriculum</h3><p>Review the published curriculum and subject details.</p><a class="btn" href="https://cbseacademic.nic.in/curriculum_2027.html" target="_blank" rel="noopener noreferrer">Open curriculum ↗</a></article>
+  <article class="card"><div class="emoji">📝</div><h3>Previous question papers</h3><p>Check the CBSE official question-paper portal.</p><a class="btn" href="https://www.cbse.gov.in/cbsenew/question-paper.html" target="_blank" rel="noopener noreferrer">Find papers ↗</a></article>
+  <article class="card"><div class="emoji">🌐</div><h3>CBSE Academic</h3><p>Official academic circulars and resources.</p><a class="btn" href="https://cbseacademic.nic.in/" target="_blank" rel="noopener noreferrer">Open CBSE ↗</a></article>
+  <article class="card"><div class="emoji">📗</div><h3>Hindi textbooks</h3><p>Use the NCERT portal to select your language and class.</p><a class="btn" href="https://ncert.nic.in/textbook.php?ln=hi" target="_blank" rel="noopener noreferrer">Hindi portal ↗</a></article>
+ </div>
+</section>
+
+<section id="planner" class="page hidden">
+ <span class="eyebrow">Your routine</span><h1 style="font-size:40px">My study plan</h1>
+ <p class="muted">Add today's goals and tick them off as you finish. Saved on this browser only.</p>
+ <div class="panel section">
+  <form id="taskForm" style="display:flex;gap:8px;flex-wrap:wrap">
+   <input id="taskInput" class="search" style="flex:1;min-width:180px;margin:0" placeholder="Example: Revise quadratic equations" required maxlength="120">
+   <button class="btn primary" type="submit">Add goal +</button>
+  </form>
+  <div id="taskList" class="section"></div>
+  <button class="btn" onclick="clearCompleted()">Clear completed goals</button>
+ </div>
+ <div class="panel section"><h3>Learning progress</h3><p id="progressText">0 lessons completed</p><div style="height:12px;background:#e7eee9;border-radius:20px;overflow:hidden"><div id="progressBar" style="width:0;height:100%;background:#146c52"></div></div><p class="small muted">Progress is stored locally on this device, not in a student account.</p></div>
+</section>
+</main>
+<footer>
+ <div style="font-size:23px;font-weight:900">Studyhub.</div>
+ <p>Learn today. Build your tomorrow.</p>
+ <p class="small">Independent student learning project. Not affiliated with CBSE or NCERT. Always confirm exam information with official sources.</p>
+ <p class="small">© <span id="year"></span> Studyhub</p>
+</footer>
+
+<script>
+const chapters={
+ math:[
+  ["Real Numbers","HCF and LCM, prime factorisation, Euclid's division lemma and irrational numbers."],
+  ["Polynomials","Zeros of a polynomial and the relationship between zeros and coefficients."],
+  ["Pair of Linear Equations in Two Variables","Solve two linear equations using graphical, substitution and elimination methods."],
+  ["Quadratic Equations","Standard form ax² + bx + c = 0; solve by factorisation or the quadratic formula."],
+  ["Arithmetic Progressions","An arithmetic progression has a constant difference between consecutive terms."],
+  ["Triangles","Similarity criteria, proportional sides and the Pythagoras theorem."],
+  ["Coordinate Geometry","Use coordinates and formulas to calculate distances and areas."],
+  ["Introduction to Trigonometry","Study sine, cosine, tangent and their ratios in right-angled triangles."],
+  ["Applications of Trigonometry","Use angles of elevation and depression to solve height and distance problems."],
+  ["Circles","Understand tangents and their properties."],
+  ["Areas Related to Circles","Calculate areas and perimeters of circles, sectors and segments."],
+  ["Surface Areas and Volumes","Apply formulas to solids such as cylinders, cones, spheres and combinations."],
+  ["Statistics","Organise data and calculate mean, median and mode."],
+  ["Probability","Probability of an event = favourable outcomes / total equally likely outcomes."]
+ ],
+ science:[
+  ["Chemical Reactions and Equations","Identify reactants and products, balance equations, and learn reaction types."],
+  ["Acids, Bases and Salts","Study indicators, pH, neutralisation and common salts."],
+  ["Metals and Non-metals","Compare physical and chemical properties, reactivity and ionic compounds."],
+  ["Carbon and Its Compounds","Learn covalent bonding, homologous series and common carbon compounds."],
+  ["Life Processes","Study nutrition, respiration, transportation and excretion."],
+  ["Control and Coordination","Understand nervous control, hormones and responses in plants and animals."],
+  ["How Do Organisms Reproduce?","Revise asexual and sexual reproduction in organisms."],
+  ["Heredity","Learn inheritance, traits and basic genetic principles."],
+  ["Light: Reflection and Refraction","Revise mirror and lens rules, ray diagrams and image formation."],
+  ["The Human Eye and the Colourful World","Study vision, corrective lenses, dispersion and atmospheric effects."],
+  ["Electricity","Use Ohm's law, resistance, series and parallel circuits, and electrical power."],
+  ["Magnetic Effects of Electric Current","Study magnetic fields, current-carrying conductors and domestic circuits."],
+  ["Our Environment","Understand ecosystems, food chains and environmental impacts."]
+ ]
+};
+const notes={
+ "Real Numbers":{formula:"For two positive integers a and b: a = bq + r, where 0 ≤ r < b.",body:"Use prime factorisation to find HCF and LCM. For two positive integers, HCF × LCM = product of the two numbers. A rational number has a terminating decimal expansion when its reduced denominator has only 2 and/or 5 as prime factors.",example:"Example: 12 = 2² × 3 and 18 = 2 × 3². HCF = 2 × 3 = 6; LCM = 2² × 3² = 36."},
+ "Polynomials":{formula:"For ax² + bx + c, sum of zeroes = −b/a and product = c/a.",body:"A zero of a polynomial is a value of x that makes the polynomial equal to zero. A quadratic polynomial can have two, one or no real zeroes.",example:"For x² − 5x + 6, factorise as (x − 2)(x − 3). The zeroes are 2 and 3."},
+ "Quadratic Equations":{formula:"x = (−b ± √(b² − 4ac)) / 2a.",body:"Write the equation in ax² + bx + c = 0 form. Identify a, b and c. The discriminant D = b² − 4ac determines the roots: D > 0 means two distinct real roots, D = 0 means equal real roots, and D < 0 means no real roots.",example:"For x² − 5x + 6 = 0, (x − 2)(x − 3) = 0, so x = 2 or x = 3."},
+ "Arithmetic Progressions":{formula:"aₙ = a + (n − 1)d; Sₙ = n/2 [2a + (n − 1)d].",body:"Here a is the first term, d is the common difference and n is the term number. Subtract consecutive terms to find d.",example:"In 3, 7, 11, 15, ... the common difference is 4."},
+ "Introduction to Trigonometry":{formula:"sin θ = perpendicular/hypotenuse; cos θ = base/hypotenuse; tan θ = perpendicular/base.",body:"Identify the angle first. The hypotenuse is opposite the right angle. The perpendicular and base depend on which acute angle you are using.",example:"For a 3–4–5 right triangle, relative to the angle opposite side 3: sin θ = 3/5, cos θ = 4/5 and tan θ = 3/4."},
+ "Light: Reflection and Refraction":{formula:"Lens formula: 1/f = 1/v − 1/u. Magnification: m = v/u for a thin lens.",body:"Use the Cartesian sign convention consistently. For a concave lens, the focal length is negative. For a convex lens, it is positive. Draw a ray diagram before deciding where the image forms.",example:"A concave lens normally forms a virtual, upright and diminished image of a real object."},
+ "Electricity":{formula:"V = IR; P = VI = I²R = V²/R; R(series) = R₁ + R₂.",body:"Ohm's law states that current through an ohmic conductor is directly proportional to voltage when temperature and other physical conditions remain constant. In parallel, reciprocal resistances add.",example:"If V = 6 V and R = 3 Ω, then I = V/R = 6/3 = 2 A."},
+ "Acids, Bases and Salts":{formula:"Acid + base → salt + water (neutralisation).",body:"Acids produce H⁺ ions in aqueous solution, while bases produce OH⁻ ions in aqueous solution. The pH scale indicates how acidic or basic a solution is.",example:"Hydrochloric acid reacts with sodium hydroxide to form sodium chloride and water."},
+ "Chemical Reactions and Equations":{formula:"Total atoms of each element must be equal on both sides of a balanced equation.",body:"Common types include combination, decomposition, displacement, double displacement and oxidation-reduction. Change coefficients to balance equations; do not change subscripts in chemical formulas.",example:"2H₂ + O₂ → 2H₂O is balanced: four hydrogen atoms and two oxygen atoms on each side."},
+ "Life Processes":{formula:"Photosynthesis: carbon dioxide + water → glucose + oxygen (in the presence of light and chlorophyll).",body:"Life processes include nutrition, respiration, transportation and excretion. Plants make food by photosynthesis; organisms release usable energy through cellular respiration.",example:"In humans, the small intestine is the main site of absorption of digested nutrients."}
+};
+const quiz=[
+ {q:"What is the HCF of 12 and 18?",opts:["3","6","9","36"],a:1,why:"6 is the greatest number that divides both 12 and 18."},
+ {q:"Which formula gives Ohm's law?",opts:["V = IR","P = I/R","R = VI","V = I + R"],a:0,why:"Ohm's law is V = IR under constant physical conditions."},
+ {q:"The zeroes of x² − 5x + 6 are:",opts:["1 and 6","−2 and −3","2 and 3","−2 and 3"],a:2,why:"x² − 5x + 6 = (x − 2)(x − 3)."},
+ {q:"Which gas is used by plants during photosynthesis?",opts:["Oxygen","Nitrogen","Hydrogen","Carbon dioxide"],a:3,why:"Plants use carbon dioxide and water to make glucose."},
+ {q:"The SI unit of electric resistance is:",opts:["Volt","Ampere","Ohm","Watt"],a:2,why:"Resistance is measured in ohms (Ω)."},
+ {q:"If the discriminant of a quadratic equation is zero, its roots are:",opts:["Equal and real","Always imaginary","Unequal and real","Always zero"],a:0,why:"D = 0 gives two equal real roots."}
+];
+let currentSubject="math",currentChapter="Real Numbers";
+function showPage(id){
+ document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
+ const page=document.getElementById(id);
+ if(page)page.classList.remove("hidden");
+ if(id==="practice")renderQuiz();
+ if(id==="planner")renderTasks();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function openSubject(subject){
+ currentSubject=subject;
+ const area=document.getElementById("subjectArea");
+ area.innerHTML=`<div class="section-head"><h2>${subject==="math"?"📐 Mathematics":"🔬 Science"} chapters</h2></div><div class="grid">${chapters[subject].map((c,i)=>`<article class="card"><span class="pill">Chapter ${i+1}</span><h3 style="margin-top:10px">${c[0]}</h3><p>${c[1]}</p><button class="btn primary" onclick="openLesson('${subject}',${i})">Open lesson →</button></article>`).join("")}</div>`;
+ showPage("subjects");
+ area.scrollIntoView({behavior:"smooth"});
+}
+function openLesson(subject,index){
+ currentSubject=subject;currentChapter=chapters[subject][index][0];
+ document.getElementById("chapterList").innerHTML=chapters[subject].map((c,i)=>`<button class="chapter ${i===index?"active":""}" onclick="openLesson('${subject}',${i})">${i+1}. ${c[0]}</button>`).join("");
+ const item=chapters[subject][index],n=notes[item[0]];
+ const done=getDone();
+ document.getElementById("lessonContent").innerHTML=`<span class="pill">${subject==="math"?"Mathematics":"Science"} · Chapter ${index+1}</span><h2>${item[0]}</h2><p class="muted">${item[1]}</p><div class="note"><strong>Key idea</strong><br>${n?n.body:item[1]+" Review your NCERT textbook for full explanations, diagrams and exercises."}</div>${n?`<h3>Important formula / concept</h3><div class="formula">${n.formula}</div><h3 class="section">Worked example</h3><p>${n.example}</p>`:`<h3>Revision checklist</h3><ul><li>Read the NCERT chapter carefully.</li><li>Write key definitions and formulas.</li><li>Practise textbook examples and exercises.</li><li>Check your answers and correct mistakes.</li></ul>`}<div class="note"><strong>Study tip:</strong> Explain the idea in your own words, then solve a question without looking at the notes.</div><button class="btn primary" onclick="markDone('${item[0].replace(/'/g,"\\'")}')">${done.includes(item[0])?"✓ Lesson completed":"Mark lesson complete ✓"}</button> <button class="btn" onclick="showPage('practice')">Try quiz →</button><p class="small muted">These are starter revision notes, not a complete replacement for NCERT or the official syllabus.</p>`;
+ showPage("lessonPage");
+}
+function getDone(){try{return JSON.parse(localStorage.getItem("studyhub_done")||"[]")}catch(e){return []}}
+function markDone(name){let d=getDone();if(!d.includes(name))d.push(name);localStorage.setItem("studyhub_done",JSON.stringify(d));openLesson(currentSubject,chapters[currentSubject].findIndex(c=>c[0]===name));updateProgress()}
+function updateProgress(){let d=getDone();document.getElementById("progressText").textContent=d.length+" lessons completed";document.getElementById("progressBar").style.width=Math.min(100,d.length/10*100)+"%"}
+function searchChapters(value){
+ const q=value.trim().toLowerCase(),el=document.getElementById("searchResults");
+ if(!q){el.innerHTML="";return}
+ const found=Object.entries(chapters).flatMap(([s,list])=>list.map((c,i)=>({s,c,i}))).filter(x=>(x.c[0]+" "+x.c[1]).toLowerCase().includes(q)).slice(0,10);
+ el.innerHTML=found.length?found.map(x=>`<button class="chapter" onclick="openLesson('${x.s}',${x.i})">${x.s==="math"?"📐 Maths":"🔬 Science"} · ${x.c[0]} →</button>`).join(""):"No matching chapter found. Try another search.";
+}
+function renderQuiz(){
+ const form=document.getElementById("quizForm");document.getElementById("quizResult").classList.add("hidden");
+ form.innerHTML=quiz.map((q,i)=>`<div class="question"><h3>${i+1}. ${q.q}</h3>${q.opts.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join("")}<div id="why${i}" class="small muted"></div></div>`).join("")+`<button type="submit" class="btn primary" style="margin-top:18px">Check my answers</button> <button type="button" class="btn" onclick="renderQuiz()">Try again</button>`;
+ form.onsubmit=e=>{e.preventDefault();let score=0;quiz.forEach((q,i)=>{const sel=form.querySelector('input[name="q'+i+'"]:checked');if(sel&&Number(sel.value)===q.a)score++;document.getElementById("why"+i).textContent="Answer: "+q.opts[q.a]+". "+q.why});const result=document.getElementById("quizResult");result.classList.remove("hidden");result.innerHTML=`<h3>Your score: ${score}/${quiz.length}</h3><p>${score===quiz.length?"Excellent work!":score>=4?"Good effort. Review any incorrect answers and try again.":"Keep practising. Read the explanations and give it another try."}</p>`;result.scrollIntoView({behavior:"smooth",block:"center"})};
+}
+function getTasks(){try{return JSON.parse(localStorage.getItem("studyhub_tasks")||"[]")}catch(e){return []}}
+function saveTasks(t){localStorage.setItem("studyhub_tasks",JSON.stringify(t))}
+function renderTasks(){
+ const tasks=getTasks(),el=document.getElementById("taskList");
+ el.innerHTML=tasks.length?tasks.map((t,i)=>`<label class="option"><input type="checkbox" ${t.done?"checked":""} onchange="toggleTask(${i},this.checked)"> <span style="${t.done?"text-decoration:line-through;color:#66756d":""}">${escapeText(t.text)}</span></label>`).join(""):"<p class='muted'>No goals yet. Add one above to get started.</p>";
+ updateProgress();
+}
+function escapeText(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+document.getElementById("taskForm").addEventListener("submit",e=>{e.preventDefault();const input=document.getElementById("taskInput");const tasks=getTasks();tasks.push({text:input.value.trim(),done:false});saveTasks(tasks);input.value="";renderTasks()});
+function toggleTask(i,done){const t=getTasks();t[i].done=done;saveTasks(t);renderTasks()}
+function clearCompleted(){saveTasks(getTasks().filter(t=>!t.done));renderTasks()}
+document.getElementById("year").textContent=new Date().getFullYear();
+updateProgress();
+</script>
+</body>
+</html>
